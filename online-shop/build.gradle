@@ -23,9 +23,14 @@ repositories {
 	mavenCentral()
 }
 
-
 dependencies {
+//	compile 'org.cassandraunit:cassandra-unit-spring:3.5.0.1'
+	compile 'org.cassandraunit:cassandra-unit:3.5.0.1'
+//	compile 'org.cassandraunit:cassandra-unit-shaded:3.5.0.1'
+	compile 'com.datastax.cassandra:cassandra-driver-core:3.6.0'
+	compile 'org.hectorclient:hector-core:2.0-0'
+
 	implementation('org.springframework.boot:spring-boot-starter-data-rest')
-	implementation('org.springframework.boot:spring-boot-starter-web')
+	implementation('org.springframework.boot:spring-boot-starter-data-cassandra')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
