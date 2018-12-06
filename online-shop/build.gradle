@@ -25,9 +25,9 @@ repositories {
 
 dependencies {
 	compile 'org.cassandraunit:cassandra-unit:3.5.0.1'
-	compile 'org.cassandraunit:cassandra-unit-shaded:3.5.0.1'
-	compile 'com.datastax.cassandra:cassandra-driver-core:3.6.0'
-	compile 'org.hectorclient:hector-core:2.0-0'
+	runtime 'org.cassandraunit:cassandra-unit-shaded:3.5.0.1'
+	runtime 'com.datastax.cassandra:cassandra-driver-core:3.6.0'
+	runtime 'org.hectorclient:hector-core:2.0-0'
 
 	implementation('org.springframework.boot:spring-boot-starter-data-rest')
 	implementation('org.springframework.boot:spring-boot-starter-data-cassandra')
