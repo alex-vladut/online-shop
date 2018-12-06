@@ -5,6 +5,7 @@ import org.cassandraunit.utils.EmbeddedCassandraServerHelper;
 public final class EmbeddedCassandraInitialiser {
 
     private EmbeddedCassandraInitialiser() {
+        throw new IllegalStateException("Static class cannot be instantiated.");
     }
 
     public static void initialiseEmbeddedCassandra() {
