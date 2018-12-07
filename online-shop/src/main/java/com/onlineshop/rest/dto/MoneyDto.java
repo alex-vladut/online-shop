@@ -1,4 +1,4 @@
-package com.onlineshop.rest;
+package com.onlineshop.rest.dto;
 
 import java.math.BigDecimal;
 import java.util.Currency;

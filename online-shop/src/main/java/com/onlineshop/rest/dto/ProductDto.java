@@ -1,7 +1,6 @@
 package com.onlineshop.rest.dto;
 
 import com.onlineshop.domain.product.Product;
-import com.onlineshop.rest.MoneyDto;
 
 public class ProductDto {
 
