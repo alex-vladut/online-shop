@@ -1,50 +1,45 @@
 package com.onlineshop.domain.product;
 
+import static java.util.UUID.randomUUID;
+
 import java.util.UUID;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.cassandra.core.mapping.Column;
-import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
+
+import com.onlineshop.domain.Money;
 
 @Table
 public class Product {
 
-    @PrimaryKey
-    @Column
-    private UUID id;
-    @Column
-    private String name;
-    @Column
-    private int price;
+	@Id
+	private final UUID id;
+	@Column
+	private final String name;
+	@Column
+	private final Money price;
 
-    public Product(final UUID id, final String name, final int price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
+	private Product(final UUID id, final String name, final Money price) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+	}
 
-    public UUID getId() {
-        return id;
-    }
+	public UUID id() {
+		return id;
+	}
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
+	public String name() {
+		return name;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public Money price() {
+		return price;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
+	public static Product newProduct(final String name, final Money price) {
+		return new Product(randomUUID(), name, price);
+	}
 
 }
