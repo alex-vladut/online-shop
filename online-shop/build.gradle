@@ -1,13 +1,7 @@
 buildscript {
-	ext {
-		springBootVersion = '2.1.1.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+	ext { springBootVersion = '2.1.1.RELEASE' }
+	repositories { mavenCentral() }
+	dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
 }
 
 apply plugin: 'java'
@@ -19,11 +13,13 @@ group = 'com.onlineshop'
 version = '0.0.1'
 sourceCompatibility = 1.8
 
-repositories {
-	mavenCentral()
-}
+repositories { mavenCentral() }
 
 dependencies {
+	compile "io.springfox:springfox-swagger2:2.9.2"
+//	compile "io.springfox:springfox-data-rest:2.9.2"
+	compile "io.springfox:springfox-swagger-ui:2.9.2"
+
 	compile 'org.cassandraunit:cassandra-unit:3.5.0.1'
 	runtime 'org.cassandraunit:cassandra-unit-shaded:3.5.0.1'
 	runtime 'com.datastax.cassandra:cassandra-driver-core:3.6.0'
