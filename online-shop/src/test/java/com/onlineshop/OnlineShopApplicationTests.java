@@ -1,10 +1,13 @@
 package com.onlineshop;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Currency;
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.Test;
@@ -35,6 +38,10 @@ public class OnlineShopApplicationTests {
 
 		Optional<Order> savedOrder = orderRepository.findById(order.id());
 		assertTrue(savedOrder.isPresent());
+
+		List<Order> findOrdersBetween = orderRepository.findAllOrdersBetween(LocalDateTime.now().minusDays(1),
+				LocalDateTime.now().plusDays(1));
+		assertNotNull(findOrdersBetween);
 	}
 
 }

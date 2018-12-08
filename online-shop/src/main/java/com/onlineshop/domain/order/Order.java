@@ -20,7 +20,7 @@ import com.onlineshop.domain.product.Product;
 import com.onlineshop.domain.validation.ValidationException;
 import com.onlineshop.domain.validation.Validator;
 
-@Table
+@Table("order_table")
 public class Order {
 
 	@Id
