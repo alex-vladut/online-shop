@@ -3,8 +3,8 @@ package com.onlineshop.domain.order;
 import static java.util.Collections.unmodifiableList;
 import static java.util.stream.Collectors.toList;
 
+import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -30,11 +30,11 @@ public class Order {
 	@Column
 	@Indexed
 	@CassandraType(type = Name.TIMESTAMP)
-	private ZonedDateTime creationDateTime;
+	private LocalDateTime creationDateTime;
 	@Column
 	private List<OrderItem> orderItems;
 
-	public Order(final UUID id, final EmailAddress buyerEmailAddress, final ZonedDateTime creationDateTime,
+	public Order(final UUID id, final EmailAddress buyerEmailAddress, final LocalDateTime creationDateTime,
 			final List<OrderItem> orderItems) {
 		this.id = id;
 		this.buyerEmailAddress = buyerEmailAddress;
@@ -50,7 +50,7 @@ public class Order {
 		return buyerEmailAddress;
 	}
 
-	public ZonedDateTime creationDateTime() {
+	public LocalDateTime creationDateTime() {
 		return creationDateTime;
 	}
 
@@ -73,7 +73,7 @@ public class Order {
 		}
 
 		final List<OrderItem> orderItems = products.stream().map(OrderItem::newOrderItem).collect(toList());
-		return new Order(UUID.randomUUID(), buyerEmailAddress, ZonedDateTime.now(ZoneOffset.UTC), orderItems);
+		return new Order(UUID.randomUUID(), buyerEmailAddress, LocalDateTime.now(ZoneOffset.UTC), orderItems);
 	}
 
 }
