@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,17 +24,18 @@ import com.onlineshop.repository.ProductRepository;
 import com.onlineshop.rest.dto.ProductDto;
 
 @RestController
+@RequestMapping("/products")
 public class ProductController {
 
 	@Autowired
 	private ProductRepository productRepository;
 
-	@GetMapping("/products")
+	@GetMapping
 	public List<ProductDto> getProducts() {
 		return productRepository.findAll().stream().map(ProductDto::fromDomain).collect(toList());
 	}
 
-	@GetMapping("/products/{productId}")
+	@GetMapping("/{productId}")
 	public ResponseEntity<ProductDto> getProduct(@RequestParam final UUID productId) {
 		final Optional<Product> product = productRepository.findById(productId);
 		if (product.isPresent()) {
@@ -43,14 +45,14 @@ public class ProductController {
 		}
 	}
 
-	@PostMapping("/products")
+	@PostMapping
 	public ProductDto createProduct(@RequestBody final ProductDto productDto) {
 		final Product createdProduct = productRepository
 				.save(newProduct(productDto.name, newMoney(productDto.price.currency, productDto.price.amount)));
 		return fromDomain(createdProduct);
 	}
 
-	@PutMapping("/products")
+	@PutMapping
 	public ResponseEntity<ProductDto> updateProduct(@RequestBody final ProductDto productDto) {
 		final Optional<Product> productOptional = productRepository.findById(productDto.id);
 		if (productOptional.isPresent()) {
