@@ -33,6 +33,21 @@ public class Money {
 		return amount;
 	}
 
+	public Money add(final Money money) {
+		if (!currency().equals(money.currency())) {
+			throw new ValidationException("money", "Cannot add money expressed in different currencies");
+		}
+
+		return new Money(currency(), amount().add(money.amount()));
+	}
+
+	public static Money newMoney(final Currency currency, final BigDecimal amount) {
+		Validator.notNull(currency, "currency");
+		Validator.notNull(amount, "amount");
+
+		return new Money(currency, amount);
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -54,29 +69,16 @@ public class Money {
 		if (amount == null) {
 			if (other.amount != null)
 				return false;
-		} else if (!amount.equals(other.amount))
+		} else if (!amount.equals(other.amount)) {
 			return false;
+		}
 		if (currency == null) {
 			if (other.currency != null)
 				return false;
-		} else if (!currency.equals(other.currency))
+		} else if (!currency.equals(other.currency)) {
 			return false;
-		return true;
-	}
-
-	public Money add(final Money money) {
-		if (!currency().equals(money.currency())) {
-			throw new ValidationException("money", "Cannot add money expressed in different currencies");
 		}
-
-		return new Money(currency(), amount().add(money.amount()));
-	}
-
-	public static Money newMoney(final Currency currency, final BigDecimal amount) {
-		Validator.notNull(currency, "currency");
-		Validator.notNull(amount, "amount");
-
-		return new Money(currency, amount);
+		return true;
 	}
 
 }
