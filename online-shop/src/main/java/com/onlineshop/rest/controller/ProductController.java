@@ -1,4 +1,4 @@
-package com.onlineshop.rest;
+package com.onlineshop.rest.controller;
 
 import static com.onlineshop.domain.Money.newMoney;
 import static com.onlineshop.domain.product.Product.newProduct;
