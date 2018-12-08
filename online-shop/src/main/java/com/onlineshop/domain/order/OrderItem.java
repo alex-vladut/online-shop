@@ -2,10 +2,13 @@ package com.onlineshop.domain.order;
 
 import java.util.UUID;
 
+import org.springframework.data.cassandra.core.mapping.UserDefinedType;
+
 import com.onlineshop.domain.Money;
 import com.onlineshop.domain.product.Product;
 import com.onlineshop.domain.validation.Validator;
 
+@UserDefinedType("orderItem")
 public class OrderItem {
 
 	private UUID productId;

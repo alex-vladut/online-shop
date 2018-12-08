@@ -1,7 +1,10 @@
 package com.onlineshop.domain.order;
 
+import org.springframework.data.cassandra.core.mapping.UserDefinedType;
+
 import com.onlineshop.domain.validation.Validator;
 
+@UserDefinedType("emailAddress")
 public class EmailAddress {
 
 	private String value;
