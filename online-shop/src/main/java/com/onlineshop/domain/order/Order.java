@@ -34,7 +34,7 @@ public class Order {
 	@Column
 	private List<OrderItem> orderItems;
 
-	public Order(final UUID id, final EmailAddress buyerEmailAddress, final LocalDateTime creationDateTime,
+	private Order(final UUID id, final EmailAddress buyerEmailAddress, final LocalDateTime creationDateTime,
 			final List<OrderItem> orderItems) {
 		this.id = id;
 		this.buyerEmailAddress = buyerEmailAddress;

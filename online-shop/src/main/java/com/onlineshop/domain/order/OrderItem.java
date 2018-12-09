@@ -14,7 +14,7 @@ public class OrderItem {
 	private UUID productId;
 	private Money price;
 
-	public OrderItem(final UUID productId, final Money price) {
+	private OrderItem(final UUID productId, final Money price) {
 		this.productId = productId;
 		this.price = price;
 	}

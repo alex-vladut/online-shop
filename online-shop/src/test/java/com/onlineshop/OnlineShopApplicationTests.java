@@ -33,7 +33,9 @@ public class OnlineShopApplicationTests {
 	public void contextLoads() {
 		final Product product = Product.newProduct("Something",
 				Money.newMoney(Currency.getInstance("EUR"), BigDecimal.valueOf(100)));
-		Order order = Order.newOrder(Arrays.asList(product), EmailAddress.newEmailAddress("test@cormp.com"));
+		Order order = orderRepository
+				.save(Order.newOrder(Arrays.asList(product), EmailAddress.newEmailAddress("test@cormp.com")));
+
 		orderRepository.save(order);
 
 		Optional<Order> savedOrder = orderRepository.findById(order.id());
