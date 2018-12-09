@@ -69,4 +69,5 @@ In order to better understand the functional requirements, I will first apply th
 In a real world application, it would be very important to implement authentication and authorisation. The above examples state the possible roles users may have in the system, but the implementation will ignore that information as no authentication/authorisation will be added for now.
 
 Based on all the above, I could identify 2 Aggregates: Product and Order, each one being used for implementing different scenarios. Here is a diagram depicting how the domain model could look like:
+
 <img src="/static/images/Domain-Model.png" class="img-responsive" alt="Online-Shop Domain Model" />
