@@ -2,9 +2,13 @@
 
 ## Start the application
 
-Further down I will try to describe the approach took for implementing this application, but if all you need is to start the application and play with it, then it's more than simple. First go the the directory where the project resides:
+Further down I will try to describe the approach took for implementing this application, but if all you need is to start the application and play with it, then it's more than simple. First clone the source code:
 ```
-> cd /online-shop
+> git clone 
+```
+Then go the the directory where the project resides:
+```
+> cd online-shop
 ```
 After navigating to the `online-shop` directory, run the following Gradle command in order to start the application:
 ```
