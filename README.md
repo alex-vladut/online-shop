@@ -38,7 +38,9 @@ Technical requirements:
 In order to better understand the functional requirements, I will first apply the BDD approach to defining some examples based on the requirements described in the section above. Here are some such examples using Gherkin format:
 
 > Given Bob is an admin user
+
 > When Bob attempts to create a product with name “Samsung S10” and the price of $1000.00
+
 > Then the product is successfully created
 
 > Given Bob is an admin user
