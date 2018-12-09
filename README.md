@@ -4,7 +4,7 @@
 
 Further down I will try to describe the approach took for implementing this application, but if all you need is to start the application and play with it, then it's more than simple. First clone the source code:
 ```
-> git clone 
+> git clone https://github.com/alex-vladut/online-shop.git
 ```
 Then go the the directory where the project resides:
 ```
