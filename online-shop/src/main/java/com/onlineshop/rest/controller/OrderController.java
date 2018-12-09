@@ -3,7 +3,9 @@ package com.onlineshop.rest.controller;
 import static com.onlineshop.domain.order.EmailAddress.newEmailAddress;
 import static com.onlineshop.domain.order.Order.newOrder;
 import static com.onlineshop.rest.dto.OrderDto.fromDomain;
+import static java.net.URI.create;
 import static java.util.stream.Collectors.toList;
+import static org.springframework.http.ResponseEntity.created;
 
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,12 +49,12 @@ public class OrderController {
 	@ApiOperation("Creates a new order")
 	@ApiResponses({ @ApiResponse(code = 201, message = "Order successfully created") })
 	@PostMapping
-	public OrderDto createOrder(@RequestBody final CreateOrderDto createOrderDto) {
+	public ResponseEntity<OrderDto> createOrder(@RequestBody final CreateOrderDto createOrderDto) {
 		final List<Product> products = createOrderDto.products.stream().map(productRepository::findById)
 				.filter(Optional::isPresent).map(Optional::get).collect(toList());
 		final EmailAddress buyerEmailAddress = newEmailAddress(createOrderDto.emailAddress);
 		final Order order = orderRepository.save(newOrder(products, buyerEmailAddress));
-		return fromDomain(order, products);
+		return created(create("/orders/" + order.id().toString())).body(fromDomain(order, products));
 	}
 
 	@ApiOperation("Fetches all orders between given date-times")

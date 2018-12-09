@@ -3,7 +3,9 @@ package com.onlineshop.rest.controller;
 import static com.onlineshop.domain.Money.newMoney;
 import static com.onlineshop.domain.product.Product.newProduct;
 import static com.onlineshop.rest.dto.ProductDto.fromDomain;
+import static java.net.URI.create;
 import static java.util.stream.Collectors.toList;
+import static org.springframework.http.ResponseEntity.created;
 
 import java.util.List;
 import java.util.Optional;
@@ -59,10 +61,10 @@ public class ProductController {
 	@ApiOperation("Creates a new product")
 	@ApiResponses({ @ApiResponse(code = 201, message = "Product successfully created") })
 	@PostMapping
-	public ProductDto createProduct(@RequestBody final ProductDto productDto) {
+	public ResponseEntity<ProductDto> createProduct(@RequestBody final ProductDto productDto) {
 		final Product createdProduct = productRepository
 				.save(newProduct(productDto.name, newMoney(productDto.price.currency, productDto.price.amount)));
-		return fromDomain(createdProduct);
+		return created(create("/products/" + createdProduct.id().toString())).body(fromDomain(createdProduct));
 	}
 
 	@ApiOperation("Updates the properties of a product")
