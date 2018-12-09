@@ -1,13 +1,17 @@
 buildscript {
 	ext { springBootVersion = '2.1.1.RELEASE' }
 	repositories { mavenCentral() }
-	dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath 'org.owasp:dependency-check-gradle:4.0.0'
+	}
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.owasp.dependencycheck'
 
 group = 'com.onlineshop'
 version = '0.0.1'
@@ -17,7 +21,7 @@ repositories { mavenCentral() }
 
 dependencies {
 	compile "io.springfox:springfox-swagger2:2.9.2"
-//	compile "io.springfox:springfox-data-rest:2.9.2"
+	//	compile "io.springfox:springfox-data-rest:2.9.2"
 	compile "io.springfox:springfox-swagger-ui:2.9.2"
 
 	compile 'org.cassandraunit:cassandra-unit:3.5.0.1'
