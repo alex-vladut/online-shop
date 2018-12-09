@@ -35,8 +35,12 @@ import io.swagger.annotations.ApiResponses;
 @RequestMapping("/products")
 public class ProductController {
 
-	@Autowired
 	private ProductRepository productRepository;
+
+	@Autowired
+	public ProductController(final ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
 
 	@ApiOperation("Fetches all the products available")
 	@ApiResponses({ @ApiResponse(code = 200, message = "All product successfully retrieved") })
