@@ -8,7 +8,7 @@ import com.onlineshop.domain.product.Product;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel("Defines the details of an order item")
+@ApiModel(description = "Defines the details of an order item")
 public class OrderItemDto {
 
 	@ApiModelProperty(value = "The ID of the product included in the order item", required = true, allowEmptyValue = false, example = "ea4d2303-8d1c-4f2d-99a4-0f9473d6da9d")

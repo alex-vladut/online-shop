@@ -6,7 +6,7 @@ import java.util.UUID;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel("Defines the details required for placing a new order")
+@ApiModel(description = "Defines the details required for placing a new order")
 public class CreateOrderDto {
 
 	@ApiModelProperty(value = "The email address of the buyer", required = true, allowEmptyValue = false, example = "john.smith@mycompany.org")

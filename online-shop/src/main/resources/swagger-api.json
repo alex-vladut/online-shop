@@ -1,0 +1,774 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "Api Documentation",
+		"version": "1.0",
+		"title": "Api Documentation",
+		"termsOfService": "urn:tos",
+		"contact": {
+			
+		},
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0"
+		}
+	},
+	"host": "localhost:8080",
+	"basePath": "/",
+	"tags": [
+		{
+			"name": "basic-error-controller",
+			"description": "Basic Error Controller"
+		},
+		{
+			"name": "order-controller",
+			"description": "Order Controller"
+		},
+		{
+			"name": "product-controller",
+			"description": "Product Controller"
+		}
+	],
+	"paths": {
+		"/error": {
+			"get": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingGET",
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"head": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingHEAD",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingPUT",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingDELETE",
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"options": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingOPTIONS",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingPATCH",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/orders": {
+			"get": {
+				"tags": [
+					"order-controller"
+				],
+				"summary": "Fetches all orders between given date-times",
+				"operationId": "getAllOrdersBetweenDateTimesUsingGET",
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"name": "endDateTime",
+						"in": "query",
+						"description": "endDateTime",
+						"required": true,
+						"type": "string",
+						"format": "date-time"
+					},
+					{
+						"name": "startDateTime",
+						"in": "query",
+						"description": "startDateTime",
+						"required": true,
+						"type": "string",
+						"format": "date-time"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Orders successfully retrieved",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/OrderDto"
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"order-controller"
+				],
+				"summary": "Creates a new order",
+				"operationId": "createOrderUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "createOrderDto",
+						"description": "createOrderDto",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/CreateOrderDto"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/OrderDto"
+						}
+					},
+					"201": {
+						"description": "Order successfully created",
+						"schema": {
+							"$ref": "#/definitions/OrderDto"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/products": {
+			"get": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Fetches all the products available",
+				"operationId": "getProductsUsingGET",
+				"produces": [
+					"*/*"
+				],
+				"responses": {
+					"200": {
+						"description": "All product successfully retrieved",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/ProductDto"
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Creates a new product",
+				"operationId": "createProductUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "productDto",
+						"description": "productDto",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"201": {
+						"description": "Product successfully created",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/products/{productId}": {
+			"get": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Fetches a single product by its given ID",
+				"operationId": "getProductUsingGET",
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"name": "productId",
+						"in": "query",
+						"description": "productId",
+						"required": true,
+						"type": "string",
+						"format": "uuid"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Product with the given ID successfully retrieved",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Product with the given ID does not exist"
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Updates the properties of a product",
+				"operationId": "updateProductUsingPUT",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "productDto",
+						"description": "productDto",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					{
+						"name": "productId",
+						"in": "query",
+						"description": "productId",
+						"required": true,
+						"type": "string",
+						"format": "uuid"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Product with the given ID successfully updated",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Product with the given ID does not exist"
+					}
+				},
+				"deprecated": false
+			}
+		}
+	},
+	"definitions": {
+		"CreateOrderDto": {
+			"type": "object",
+			"required": [
+				"emailAddress",
+				"products"
+			],
+			"properties": {
+				"emailAddress": {
+					"type": "string",
+					"example": "john.smith@mycompany.org",
+					"description": "The email address of the buyer"
+				},
+				"products": {
+					"type": "array",
+					"example": [
+						"285ea2f5-1a42-4fdf-b500-b8a6554deb9e",
+						"933b0774-0fe6-42b7-bdf5-32a26b744dec"
+					],
+					"description": "The IDs of the products to be included in the order",
+					"items": {
+						"type": "string",
+						"format": "uuid"
+					}
+				}
+			},
+			"title": "CreateOrderDto",
+			"description": "Defines the details required for placing a new order"
+		},
+		"ModelAndView": {
+			"type": "object",
+			"properties": {
+				"empty": {
+					"type": "boolean"
+				},
+				"model": {
+					"type": "object"
+				},
+				"modelMap": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "object"
+					}
+				},
+				"reference": {
+					"type": "boolean"
+				},
+				"status": {
+					"type": "string",
+					"enum": [
+						"100 CONTINUE",
+						"101 SWITCHING_PROTOCOLS",
+						"102 PROCESSING",
+						"103 CHECKPOINT",
+						"200 OK",
+						"201 CREATED",
+						"202 ACCEPTED",
+						"203 NON_AUTHORITATIVE_INFORMATION",
+						"204 NO_CONTENT",
+						"205 RESET_CONTENT",
+						"206 PARTIAL_CONTENT",
+						"207 MULTI_STATUS",
+						"208 ALREADY_REPORTED",
+						"226 IM_USED",
+						"300 MULTIPLE_CHOICES",
+						"301 MOVED_PERMANENTLY",
+						"302 FOUND",
+						"302 MOVED_TEMPORARILY",
+						"303 SEE_OTHER",
+						"304 NOT_MODIFIED",
+						"305 USE_PROXY",
+						"307 TEMPORARY_REDIRECT",
+						"308 PERMANENT_REDIRECT",
+						"400 BAD_REQUEST",
+						"401 UNAUTHORIZED",
+						"402 PAYMENT_REQUIRED",
+						"403 FORBIDDEN",
+						"404 NOT_FOUND",
+						"405 METHOD_NOT_ALLOWED",
+						"406 NOT_ACCEPTABLE",
+						"407 PROXY_AUTHENTICATION_REQUIRED",
+						"408 REQUEST_TIMEOUT",
+						"409 CONFLICT",
+						"410 GONE",
+						"411 LENGTH_REQUIRED",
+						"412 PRECONDITION_FAILED",
+						"413 PAYLOAD_TOO_LARGE",
+						"413 REQUEST_ENTITY_TOO_LARGE",
+						"414 URI_TOO_LONG",
+						"414 REQUEST_URI_TOO_LONG",
+						"415 UNSUPPORTED_MEDIA_TYPE",
+						"416 REQUESTED_RANGE_NOT_SATISFIABLE",
+						"417 EXPECTATION_FAILED",
+						"418 I_AM_A_TEAPOT",
+						"419 INSUFFICIENT_SPACE_ON_RESOURCE",
+						"420 METHOD_FAILURE",
+						"421 DESTINATION_LOCKED",
+						"422 UNPROCESSABLE_ENTITY",
+						"423 LOCKED",
+						"424 FAILED_DEPENDENCY",
+						"426 UPGRADE_REQUIRED",
+						"428 PRECONDITION_REQUIRED",
+						"429 TOO_MANY_REQUESTS",
+						"431 REQUEST_HEADER_FIELDS_TOO_LARGE",
+						"451 UNAVAILABLE_FOR_LEGAL_REASONS",
+						"500 INTERNAL_SERVER_ERROR",
+						"501 NOT_IMPLEMENTED",
+						"502 BAD_GATEWAY",
+						"503 SERVICE_UNAVAILABLE",
+						"504 GATEWAY_TIMEOUT",
+						"505 HTTP_VERSION_NOT_SUPPORTED",
+						"506 VARIANT_ALSO_NEGOTIATES",
+						"507 INSUFFICIENT_STORAGE",
+						"508 LOOP_DETECTED",
+						"509 BANDWIDTH_LIMIT_EXCEEDED",
+						"510 NOT_EXTENDED",
+						"511 NETWORK_AUTHENTICATION_REQUIRED"
+					]
+				},
+				"view": {
+					"$ref": "#/definitions/View"
+				},
+				"viewName": {
+					"type": "string"
+				}
+			},
+			"title": "ModelAndView"
+		},
+		"MoneyDto": {
+			"type": "object",
+			"required": [
+				"amount",
+				"currency"
+			],
+			"properties": {
+				"amount": {
+					"type": "number",
+					"example": 1350.9,
+					"description": "The amount of money"
+				},
+				"currency": {
+					"type": "string",
+					"example": "GBP",
+					"description": "The currency the amount of money is expressed in"
+				}
+			},
+			"title": "MoneyDto",
+			"description": "Money defined as the combination of a currency and the amount"
+		},
+		"OrderDto": {
+			"type": "object",
+			"required": [
+				"creationDateTime",
+				"id",
+				"orderItems",
+				"totalPrice"
+			],
+			"properties": {
+				"creationDateTime": {
+					"type": "string",
+					"format": "date-time",
+					"example": "2018-11-19T14:36:25.181",
+					"description": "UTC date time when the order was placed"
+				},
+				"id": {
+					"type": "string",
+					"format": "uuid",
+					"example": "ea4d2303-8d1c-4f2d-99a4-0f9473d6da9d",
+					"description": "The ID of the  order"
+				},
+				"orderItems": {
+					"type": "array",
+					"description": "Order items included in the order",
+					"items": {
+						"$ref": "#/definitions/OrderItemDto"
+					}
+				},
+				"totalPrice": {
+					"description": "Total price of the order",
+					"$ref": "#/definitions/MoneyDto"
+				}
+			},
+			"title": "OrderDto",
+			"description": "Defines the details of an order"
+		},
+		"OrderItemDto": {
+			"type": "object",
+			"required": [
+				"price",
+				"productId",
+				"productName"
+			],
+			"properties": {
+				"price": {
+					"description": "The price of the product at the time when the order was placed",
+					"$ref": "#/definitions/MoneyDto"
+				},
+				"productId": {
+					"type": "string",
+					"format": "uuid",
+					"example": "ea4d2303-8d1c-4f2d-99a4-0f9473d6da9d",
+					"description": "The ID of the product included in the order item"
+				},
+				"productName": {
+					"type": "string",
+					"example": "Smartphone Nokia 10",
+					"description": "The name of the product included in the order item"
+				}
+			},
+			"title": "OrderItemDto",
+			"description": "Defines the details of an order item"
+		},
+		"ProductDto": {
+			"type": "object",
+			"required": [
+				"name",
+				"price"
+			],
+			"properties": {
+				"id": {
+					"type": "string",
+					"format": "uuid",
+					"description": "The ID of a product, generated when a new product is created"
+				},
+				"name": {
+					"type": "string",
+					"example": "Smartphone Nokia 10",
+					"description": "The name of a product"
+				},
+				"price": {
+					"example": "100.00 GBP",
+					"description": "The price of a product",
+					"$ref": "#/definitions/MoneyDto"
+				}
+			},
+			"title": "ProductDto",
+			"description": "Defines the structure of a Product"
+		},
+		"View": {
+			"type": "object",
+			"properties": {
+				"contentType": {
+					"type": "string"
+				}
+			},
+			"title": "View"
+		}
+	}
+}

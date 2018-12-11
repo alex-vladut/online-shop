@@ -1,0 +1,1882 @@
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.1.RELEASE)
+
+2018-12-11 22:48:51.733  INFO 7494 --- [           main] com.onlineshop.OnlineShopApplication     : Starting OnlineShopApplication on 192-168-0-101.rdsnet.ro with PID 7494 (/Users/alexandru.vladut/Personal/GitHub/online-shop/online-shop/build/classes/java/main started by alexandru.vladut in /Users/alexandru.vladut/Personal/GitHub/online-shop/online-shop)
+2018-12-11 22:48:51.737  INFO 7494 --- [           main] com.onlineshop.OnlineShopApplication     : No active profile set, falling back to default profiles: default
+2018-12-11 22:48:53.072  INFO 7494 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-11 22:48:53.148  INFO 7494 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66ms. Found 0 repository interfaces.
+2018-12-11 22:48:53.154  INFO 7494 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-11 22:48:53.181  INFO 7494 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 2 repository interfaces.
+2018-12-11 22:48:53.557  INFO 7494 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$eecd5273] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-11 22:48:54.079  INFO 7494 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-12-11 22:48:54.128  INFO 7494 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-11 22:48:54.128  INFO 7494 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-11 22:48:54.145  INFO 7494 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/alexandru.vladut/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2018-12-11 22:48:54.284  INFO 7494 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-12-11 22:48:54.284  INFO 7494 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2477 ms
+2018-12-11 22:48:54.456  WARN 7494 --- [           main] io.swagger.v3.parser.OpenAPIV3Parser     : Exception while reading:
+
+java.lang.RuntimeException: Could not find {
+	"swagger": "2.0",
+	"info": {
+		"description": "Api Documentation",
+		"version": "1.0",
+		"title": "Api Documentation",
+		"termsOfService": "urn:tos",
+		"contact": {
+			
+		},
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0"
+		}
+	},
+	"host": "localhost:8080",
+	"basePath": "/",
+	"tags": [
+		{
+			"name": "basic-error-controller",
+			"description": "Basic Error Controller"
+		},
+		{
+			"name": "order-controller",
+			"description": "Order Controller"
+		},
+		{
+			"name": "product-controller",
+			"description": "Product Controller"
+		}
+	],
+	"paths": {
+		"/error": {
+			"get": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingGET",
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"head": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingHEAD",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingPUT",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingDELETE",
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"options": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingOPTIONS",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingPATCH",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/orders": {
+			"get": {
+				"tags": [
+					"order-controller"
+				],
+				"summary": "Fetches all orders between given date-times",
+				"operationId": "getAllOrdersBetweenDateTimesUsingGET",
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"name": "endDateTime",
+						"in": "query",
+						"description": "endDateTime",
+						"required": true,
+						"type": "string",
+						"format": "date-time"
+					},
+					{
+						"name": "startDateTime",
+						"in": "query",
+						"description": "startDateTime",
+						"required": true,
+						"type": "string",
+						"format": "date-time"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Orders successfully retrieved",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/OrderDto"
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"order-controller"
+				],
+				"summary": "Creates a new order",
+				"operationId": "createOrderUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "createOrderDto",
+						"description": "createOrderDto",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/CreateOrderDto"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/OrderDto"
+						}
+					},
+					"201": {
+						"description": "Order successfully created",
+						"schema": {
+							"$ref": "#/definitions/OrderDto"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/products": {
+			"get": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Fetches all the products available",
+				"operationId": "getProductsUsingGET",
+				"produces": [
+					"*/*"
+				],
+				"responses": {
+					"200": {
+						"description": "All product successfully retrieved",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/ProductDto"
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Creates a new product",
+				"operationId": "createProductUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "productDto",
+						"description": "productDto",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"201": {
+						"description": "Product successfully created",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/products/{productId}": {
+			"get": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Fetches a single product by its given ID",
+				"operationId": "getProductUsingGET",
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"name": "productId",
+						"in": "query",
+						"description": "productId",
+						"required": true,
+						"type": "string",
+						"format": "uuid"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Product with the given ID successfully retrieved",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Product with the given ID does not exist"
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Updates the properties of a product",
+				"operationId": "updateProductUsingPUT",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "productDto",
+						"description": "productDto",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					{
+						"name": "productId",
+						"in": "query",
+						"description": "productId",
+						"required": true,
+						"type": "string",
+						"format": "uuid"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Product with the given ID successfully updated",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Product with the given ID does not exist"
+					}
+				},
+				"deprecated": false
+			}
+		}
+	},
+	"definitions": {
+		"CreateOrderDto": {
+			"type": "object",
+			"required": [
+				"emailAddress",
+				"products"
+			],
+			"properties": {
+				"emailAddress": {
+					"type": "string",
+					"example": "john.smith@mycompany.org",
+					"description": "The email address of the buyer"
+				},
+				"products": {
+					"type": "array",
+					"example": [
+						"285ea2f5-1a42-4fdf-b500-b8a6554deb9e",
+						"933b0774-0fe6-42b7-bdf5-32a26b744dec"
+					],
+					"description": "The IDs of the products to be included in the order",
+					"items": {
+						"type": "string",
+						"format": "uuid"
+					}
+				}
+			},
+			"title": "CreateOrderDto",
+			"description": "Defines the details required for placing a new order"
+		},
+		"ModelAndView": {
+			"type": "object",
+			"properties": {
+				"empty": {
+					"type": "boolean"
+				},
+				"model": {
+					"type": "object"
+				},
+				"modelMap": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "object"
+					}
+				},
+				"reference": {
+					"type": "boolean"
+				},
+				"status": {
+					"type": "string",
+					"enum": [
+						"100 CONTINUE",
+						"101 SWITCHING_PROTOCOLS",
+						"102 PROCESSING",
+						"103 CHECKPOINT",
+						"200 OK",
+						"201 CREATED",
+						"202 ACCEPTED",
+						"203 NON_AUTHORITATIVE_INFORMATION",
+						"204 NO_CONTENT",
+						"205 RESET_CONTENT",
+						"206 PARTIAL_CONTENT",
+						"207 MULTI_STATUS",
+						"208 ALREADY_REPORTED",
+						"226 IM_USED",
+						"300 MULTIPLE_CHOICES",
+						"301 MOVED_PERMANENTLY",
+						"302 FOUND",
+						"302 MOVED_TEMPORARILY",
+						"303 SEE_OTHER",
+						"304 NOT_MODIFIED",
+						"305 USE_PROXY",
+						"307 TEMPORARY_REDIRECT",
+						"308 PERMANENT_REDIRECT",
+						"400 BAD_REQUEST",
+						"401 UNAUTHORIZED",
+						"402 PAYMENT_REQUIRED",
+						"403 FORBIDDEN",
+						"404 NOT_FOUND",
+						"405 METHOD_NOT_ALLOWED",
+						"406 NOT_ACCEPTABLE",
+						"407 PROXY_AUTHENTICATION_REQUIRED",
+						"408 REQUEST_TIMEOUT",
+						"409 CONFLICT",
+						"410 GONE",
+						"411 LENGTH_REQUIRED",
+						"412 PRECONDITION_FAILED",
+						"413 PAYLOAD_TOO_LARGE",
+						"413 REQUEST_ENTITY_TOO_LARGE",
+						"414 URI_TOO_LONG",
+						"414 REQUEST_URI_TOO_LONG",
+						"415 UNSUPPORTED_MEDIA_TYPE",
+						"416 REQUESTED_RANGE_NOT_SATISFIABLE",
+						"417 EXPECTATION_FAILED",
+						"418 I_AM_A_TEAPOT",
+						"419 INSUFFICIENT_SPACE_ON_RESOURCE",
+						"420 METHOD_FAILURE",
+						"421 DESTINATION_LOCKED",
+						"422 UNPROCESSABLE_ENTITY",
+						"423 LOCKED",
+						"424 FAILED_DEPENDENCY",
+						"426 UPGRADE_REQUIRED",
+						"428 PRECONDITION_REQUIRED",
+						"429 TOO_MANY_REQUESTS",
+						"431 REQUEST_HEADER_FIELDS_TOO_LARGE",
+						"451 UNAVAILABLE_FOR_LEGAL_REASONS",
+						"500 INTERNAL_SERVER_ERROR",
+						"501 NOT_IMPLEMENTED",
+						"502 BAD_GATEWAY",
+						"503 SERVICE_UNAVAILABLE",
+						"504 GATEWAY_TIMEOUT",
+						"505 HTTP_VERSION_NOT_SUPPORTED",
+						"506 VARIANT_ALSO_NEGOTIATES",
+						"507 INSUFFICIENT_STORAGE",
+						"508 LOOP_DETECTED",
+						"509 BANDWIDTH_LIMIT_EXCEEDED",
+						"510 NOT_EXTENDED",
+						"511 NETWORK_AUTHENTICATION_REQUIRED"
+					]
+				},
+				"view": {
+					"$ref": "#/definitions/View"
+				},
+				"viewName": {
+					"type": "string"
+				}
+			},
+			"title": "ModelAndView"
+		},
+		"MoneyDto": {
+			"type": "object",
+			"required": [
+				"amount",
+				"currency"
+			],
+			"properties": {
+				"amount": {
+					"type": "number",
+					"example": 1350.9,
+					"description": "The amount of money"
+				},
+				"currency": {
+					"type": "string",
+					"example": "GBP",
+					"description": "The currency the amount of money is expressed in"
+				}
+			},
+			"title": "MoneyDto",
+			"description": "Money defined as the combination of a currency and the amount"
+		},
+		"OrderDto": {
+			"type": "object",
+			"required": [
+				"creationDateTime",
+				"id",
+				"orderItems",
+				"totalPrice"
+			],
+			"properties": {
+				"creationDateTime": {
+					"type": "string",
+					"format": "date-time",
+					"example": "2018-11-19T14:36:25.181",
+					"description": "UTC date time when the order was placed"
+				},
+				"id": {
+					"type": "string",
+					"format": "uuid",
+					"example": "ea4d2303-8d1c-4f2d-99a4-0f9473d6da9d",
+					"description": "The ID of the  order"
+				},
+				"orderItems": {
+					"type": "array",
+					"description": "Order items included in the order",
+					"items": {
+						"$ref": "#/definitions/OrderItemDto"
+					}
+				},
+				"totalPrice": {
+					"description": "Total price of the order",
+					"$ref": "#/definitions/MoneyDto"
+				}
+			},
+			"title": "OrderDto",
+			"description": "Defines the details of an order"
+		},
+		"OrderItemDto": {
+			"type": "object",
+			"required": [
+				"price",
+				"productId",
+				"productName"
+			],
+			"properties": {
+				"price": {
+					"description": "The price of the product at the time when the order was placed",
+					"$ref": "#/definitions/MoneyDto"
+				},
+				"productId": {
+					"type": "string",
+					"format": "uuid",
+					"example": "ea4d2303-8d1c-4f2d-99a4-0f9473d6da9d",
+					"description": "The ID of the product included in the order item"
+				},
+				"productName": {
+					"type": "string",
+					"example": "Smartphone Nokia 10",
+					"description": "The name of the product included in the order item"
+				}
+			},
+			"title": "OrderItemDto",
+			"description": "Defines the details of an order item"
+		},
+		"ProductDto": {
+			"type": "object",
+			"required": [
+				"name",
+				"price"
+			],
+			"properties": {
+				"id": {
+					"type": "string",
+					"format": "uuid",
+					"description": "The ID of a product, generated when a new product is created"
+				},
+				"name": {
+					"type": "string",
+					"example": "Smartphone Nokia 10",
+					"description": "The name of a product"
+				},
+				"price": {
+					"example": "100.00 GBP",
+					"description": "The price of a product",
+					"$ref": "#/definitions/MoneyDto"
+				}
+			},
+			"title": "ProductDto",
+			"description": "Defines the structure of a Product"
+		},
+		"View": {
+			"type": "object",
+			"properties": {
+				"contentType": {
+					"type": "string"
+				}
+			},
+			"title": "View"
+		}
+	}
+} on the classpath
+	at io.swagger.v3.parser.util.ClasspathHelper.loadFileFromClasspath(ClasspathHelper.java:31) ~[swagger-parser-v3-2.0.5.jar:2.0.5]
+	at io.swagger.v3.parser.OpenAPIV3Parser.readWithInfo(OpenAPIV3Parser.java:135) [swagger-parser-v3-2.0.5.jar:2.0.5]
+	at io.swagger.v3.parser.OpenAPIV3Parser.readLocation(OpenAPIV3Parser.java:45) [swagger-parser-v3-2.0.5.jar:2.0.5]
+	at io.swagger.parser.OpenAPIParser.readLocation(OpenAPIParser.java:19) [swagger-parser-2.0.5.jar:2.0.5]
+	at com.atlassian.oai.validator.OpenApiInteractionValidator.loadApi(OpenApiInteractionValidator.java:146) [swagger-request-validator-core-2.1.0.jar:na]
+	at com.atlassian.oai.validator.OpenApiInteractionValidator.<init>(OpenApiInteractionValidator.java:123) [swagger-request-validator-core-2.1.0.jar:na]
+	at com.atlassian.oai.validator.OpenApiInteractionValidator.<init>(OpenApiInteractionValidator.java:45) [swagger-request-validator-core-2.1.0.jar:na]
+	at com.atlassian.oai.validator.OpenApiInteractionValidator$Builder.build(OpenApiInteractionValidator.java:426) [swagger-request-validator-core-2.1.0.jar:na]
+	at com.atlassian.oai.validator.springmvc.OpenApiValidationService.<init>(OpenApiValidationService.java:33) [swagger-request-validator-springmvc-2.1.0.jar:na]
+	at com.atlassian.oai.validator.springmvc.OpenApiValidationInterceptor.<init>(OpenApiValidationInterceptor.java:35) [swagger-request-validator-springmvc-2.1.0.jar:na]
+	at com.onlineshop.runtime.SwaggerApiValidationConfig.<init>(SwaggerApiValidationConfig.java:32) [main/:na]
+	at com.onlineshop.runtime.SwaggerApiValidationConfig$$EnhancerBySpringCGLIB$$a83a8abf.<init>(<generated>) [main/:na]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) [na:1.8.0_144]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) [na:1.8.0_144]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) [na:1.8.0_144]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) [na:1.8.0_144]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1308) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1154) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:392) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:235) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:193) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:188) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:170) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:89) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:261) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:234) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:54) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5098) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1432) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1422) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_144]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134) ~[na:1.8.0_144]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:944) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:831) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1432) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1422) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_144]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134) ~[na:1.8.0_144]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:944) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:261) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:801) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:372) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:106) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:414) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:174) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:540) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at com.onlineshop.OnlineShopApplication.main(OnlineShopApplication.java:14) ~[main/:na]
+
+2018-12-11 22:48:54.574 ERROR 7494 --- [           main] i.swagger.parser.SwaggerCompatConverter  : failed to read resource listing
+
+java.lang.RuntimeException: Could not find {
+	"swagger": "2.0",
+	"info": {
+		"description": "Api Documentation",
+		"version": "1.0",
+		"title": "Api Documentation",
+		"termsOfService": "urn:tos",
+		"contact": {
+			
+		},
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0"
+		}
+	},
+	"host": "localhost:8080",
+	"basePath": "/",
+	"tags": [
+		{
+			"name": "basic-error-controller",
+			"description": "Basic Error Controller"
+		},
+		{
+			"name": "order-controller",
+			"description": "Order Controller"
+		},
+		{
+			"name": "product-controller",
+			"description": "Product Controller"
+		}
+	],
+	"paths": {
+		"/error": {
+			"get": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingGET",
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"head": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingHEAD",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingPUT",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingDELETE",
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"options": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingOPTIONS",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"basic-error-controller"
+				],
+				"summary": "errorHtml",
+				"operationId": "errorHtmlUsingPATCH",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"text/html"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ModelAndView"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/orders": {
+			"get": {
+				"tags": [
+					"order-controller"
+				],
+				"summary": "Fetches all orders between given date-times",
+				"operationId": "getAllOrdersBetweenDateTimesUsingGET",
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"name": "endDateTime",
+						"in": "query",
+						"description": "endDateTime",
+						"required": true,
+						"type": "string",
+						"format": "date-time"
+					},
+					{
+						"name": "startDateTime",
+						"in": "query",
+						"description": "startDateTime",
+						"required": true,
+						"type": "string",
+						"format": "date-time"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Orders successfully retrieved",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/OrderDto"
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"order-controller"
+				],
+				"summary": "Creates a new order",
+				"operationId": "createOrderUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "createOrderDto",
+						"description": "createOrderDto",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/CreateOrderDto"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/OrderDto"
+						}
+					},
+					"201": {
+						"description": "Order successfully created",
+						"schema": {
+							"$ref": "#/definitions/OrderDto"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/products": {
+			"get": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Fetches all the products available",
+				"operationId": "getProductsUsingGET",
+				"produces": [
+					"*/*"
+				],
+				"responses": {
+					"200": {
+						"description": "All product successfully retrieved",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/ProductDto"
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Creates a new product",
+				"operationId": "createProductUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "productDto",
+						"description": "productDto",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"201": {
+						"description": "Product successfully created",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/products/{productId}": {
+			"get": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Fetches a single product by its given ID",
+				"operationId": "getProductUsingGET",
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"name": "productId",
+						"in": "query",
+						"description": "productId",
+						"required": true,
+						"type": "string",
+						"format": "uuid"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Product with the given ID successfully retrieved",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Product with the given ID does not exist"
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"product-controller"
+				],
+				"summary": "Updates the properties of a product",
+				"operationId": "updateProductUsingPUT",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "productDto",
+						"description": "productDto",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					{
+						"name": "productId",
+						"in": "query",
+						"description": "productId",
+						"required": true,
+						"type": "string",
+						"format": "uuid"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Product with the given ID successfully updated",
+						"schema": {
+							"$ref": "#/definitions/ProductDto"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Product with the given ID does not exist"
+					}
+				},
+				"deprecated": false
+			}
+		}
+	},
+	"definitions": {
+		"CreateOrderDto": {
+			"type": "object",
+			"required": [
+				"emailAddress",
+				"products"
+			],
+			"properties": {
+				"emailAddress": {
+					"type": "string",
+					"example": "john.smith@mycompany.org",
+					"description": "The email address of the buyer"
+				},
+				"products": {
+					"type": "array",
+					"example": [
+						"285ea2f5-1a42-4fdf-b500-b8a6554deb9e",
+						"933b0774-0fe6-42b7-bdf5-32a26b744dec"
+					],
+					"description": "The IDs of the products to be included in the order",
+					"items": {
+						"type": "string",
+						"format": "uuid"
+					}
+				}
+			},
+			"title": "CreateOrderDto",
+			"description": "Defines the details required for placing a new order"
+		},
+		"ModelAndView": {
+			"type": "object",
+			"properties": {
+				"empty": {
+					"type": "boolean"
+				},
+				"model": {
+					"type": "object"
+				},
+				"modelMap": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "object"
+					}
+				},
+				"reference": {
+					"type": "boolean"
+				},
+				"status": {
+					"type": "string",
+					"enum": [
+						"100 CONTINUE",
+						"101 SWITCHING_PROTOCOLS",
+						"102 PROCESSING",
+						"103 CHECKPOINT",
+						"200 OK",
+						"201 CREATED",
+						"202 ACCEPTED",
+						"203 NON_AUTHORITATIVE_INFORMATION",
+						"204 NO_CONTENT",
+						"205 RESET_CONTENT",
+						"206 PARTIAL_CONTENT",
+						"207 MULTI_STATUS",
+						"208 ALREADY_REPORTED",
+						"226 IM_USED",
+						"300 MULTIPLE_CHOICES",
+						"301 MOVED_PERMANENTLY",
+						"302 FOUND",
+						"302 MOVED_TEMPORARILY",
+						"303 SEE_OTHER",
+						"304 NOT_MODIFIED",
+						"305 USE_PROXY",
+						"307 TEMPORARY_REDIRECT",
+						"308 PERMANENT_REDIRECT",
+						"400 BAD_REQUEST",
+						"401 UNAUTHORIZED",
+						"402 PAYMENT_REQUIRED",
+						"403 FORBIDDEN",
+						"404 NOT_FOUND",
+						"405 METHOD_NOT_ALLOWED",
+						"406 NOT_ACCEPTABLE",
+						"407 PROXY_AUTHENTICATION_REQUIRED",
+						"408 REQUEST_TIMEOUT",
+						"409 CONFLICT",
+						"410 GONE",
+						"411 LENGTH_REQUIRED",
+						"412 PRECONDITION_FAILED",
+						"413 PAYLOAD_TOO_LARGE",
+						"413 REQUEST_ENTITY_TOO_LARGE",
+						"414 URI_TOO_LONG",
+						"414 REQUEST_URI_TOO_LONG",
+						"415 UNSUPPORTED_MEDIA_TYPE",
+						"416 REQUESTED_RANGE_NOT_SATISFIABLE",
+						"417 EXPECTATION_FAILED",
+						"418 I_AM_A_TEAPOT",
+						"419 INSUFFICIENT_SPACE_ON_RESOURCE",
+						"420 METHOD_FAILURE",
+						"421 DESTINATION_LOCKED",
+						"422 UNPROCESSABLE_ENTITY",
+						"423 LOCKED",
+						"424 FAILED_DEPENDENCY",
+						"426 UPGRADE_REQUIRED",
+						"428 PRECONDITION_REQUIRED",
+						"429 TOO_MANY_REQUESTS",
+						"431 REQUEST_HEADER_FIELDS_TOO_LARGE",
+						"451 UNAVAILABLE_FOR_LEGAL_REASONS",
+						"500 INTERNAL_SERVER_ERROR",
+						"501 NOT_IMPLEMENTED",
+						"502 BAD_GATEWAY",
+						"503 SERVICE_UNAVAILABLE",
+						"504 GATEWAY_TIMEOUT",
+						"505 HTTP_VERSION_NOT_SUPPORTED",
+						"506 VARIANT_ALSO_NEGOTIATES",
+						"507 INSUFFICIENT_STORAGE",
+						"508 LOOP_DETECTED",
+						"509 BANDWIDTH_LIMIT_EXCEEDED",
+						"510 NOT_EXTENDED",
+						"511 NETWORK_AUTHENTICATION_REQUIRED"
+					]
+				},
+				"view": {
+					"$ref": "#/definitions/View"
+				},
+				"viewName": {
+					"type": "string"
+				}
+			},
+			"title": "ModelAndView"
+		},
+		"MoneyDto": {
+			"type": "object",
+			"required": [
+				"amount",
+				"currency"
+			],
+			"properties": {
+				"amount": {
+					"type": "number",
+					"example": 1350.9,
+					"description": "The amount of money"
+				},
+				"currency": {
+					"type": "string",
+					"example": "GBP",
+					"description": "The currency the amount of money is expressed in"
+				}
+			},
+			"title": "MoneyDto",
+			"description": "Money defined as the combination of a currency and the amount"
+		},
+		"OrderDto": {
+			"type": "object",
+			"required": [
+				"creationDateTime",
+				"id",
+				"orderItems",
+				"totalPrice"
+			],
+			"properties": {
+				"creationDateTime": {
+					"type": "string",
+					"format": "date-time",
+					"example": "2018-11-19T14:36:25.181",
+					"description": "UTC date time when the order was placed"
+				},
+				"id": {
+					"type": "string",
+					"format": "uuid",
+					"example": "ea4d2303-8d1c-4f2d-99a4-0f9473d6da9d",
+					"description": "The ID of the  order"
+				},
+				"orderItems": {
+					"type": "array",
+					"description": "Order items included in the order",
+					"items": {
+						"$ref": "#/definitions/OrderItemDto"
+					}
+				},
+				"totalPrice": {
+					"description": "Total price of the order",
+					"$ref": "#/definitions/MoneyDto"
+				}
+			},
+			"title": "OrderDto",
+			"description": "Defines the details of an order"
+		},
+		"OrderItemDto": {
+			"type": "object",
+			"required": [
+				"price",
+				"productId",
+				"productName"
+			],
+			"properties": {
+				"price": {
+					"description": "The price of the product at the time when the order was placed",
+					"$ref": "#/definitions/MoneyDto"
+				},
+				"productId": {
+					"type": "string",
+					"format": "uuid",
+					"example": "ea4d2303-8d1c-4f2d-99a4-0f9473d6da9d",
+					"description": "The ID of the product included in the order item"
+				},
+				"productName": {
+					"type": "string",
+					"example": "Smartphone Nokia 10",
+					"description": "The name of the product included in the order item"
+				}
+			},
+			"title": "OrderItemDto",
+			"description": "Defines the details of an order item"
+		},
+		"ProductDto": {
+			"type": "object",
+			"required": [
+				"name",
+				"price"
+			],
+			"properties": {
+				"id": {
+					"type": "string",
+					"format": "uuid",
+					"description": "The ID of a product, generated when a new product is created"
+				},
+				"name": {
+					"type": "string",
+					"example": "Smartphone Nokia 10",
+					"description": "The name of a product"
+				},
+				"price": {
+					"example": "100.00 GBP",
+					"description": "The price of a product",
+					"$ref": "#/definitions/MoneyDto"
+				}
+			},
+			"title": "ProductDto",
+			"description": "Defines the structure of a Product"
+		},
+		"View": {
+			"type": "object",
+			"properties": {
+				"contentType": {
+					"type": "string"
+				}
+			},
+			"title": "View"
+		}
+	}
+} on the classpath
+	at io.swagger.parser.util.ClasspathHelper.loadFileFromClasspath(ClasspathHelper.java:31) ~[swagger-parser-1.0.39.jar:1.0.39]
+	at io.swagger.parser.SwaggerCompatConverter.readResourceListing(SwaggerCompatConverter.java:207) [swagger-compat-spec-parser-1.0.39.jar:2.0.5]
+	at io.swagger.parser.SwaggerCompatConverter.read(SwaggerCompatConverter.java:123) [swagger-compat-spec-parser-1.0.39.jar:2.0.5]
+	at io.swagger.parser.SwaggerCompatConverter.readWithInfo(SwaggerCompatConverter.java:94) [swagger-compat-spec-parser-1.0.39.jar:2.0.5]
+	at io.swagger.parser.SwaggerParser.readWithInfo(SwaggerParser.java:42) [swagger-parser-1.0.39.jar:2.0.5]
+	at io.swagger.v3.parser.converter.SwaggerConverter.readLocation(SwaggerConverter.java:92) [swagger-parser-v2-converter-2.0.5.jar:2.0.5]
+	at io.swagger.parser.OpenAPIParser.readLocation(OpenAPIParser.java:19) [swagger-parser-2.0.5.jar:2.0.5]
+	at com.atlassian.oai.validator.OpenApiInteractionValidator.loadApi(OpenApiInteractionValidator.java:146) [swagger-request-validator-core-2.1.0.jar:na]
+	at com.atlassian.oai.validator.OpenApiInteractionValidator.<init>(OpenApiInteractionValidator.java:123) [swagger-request-validator-core-2.1.0.jar:na]
+	at com.atlassian.oai.validator.OpenApiInteractionValidator.<init>(OpenApiInteractionValidator.java:45) [swagger-request-validator-core-2.1.0.jar:na]
+	at com.atlassian.oai.validator.OpenApiInteractionValidator$Builder.build(OpenApiInteractionValidator.java:426) [swagger-request-validator-core-2.1.0.jar:na]
+	at com.atlassian.oai.validator.springmvc.OpenApiValidationService.<init>(OpenApiValidationService.java:33) [swagger-request-validator-springmvc-2.1.0.jar:na]
+	at com.atlassian.oai.validator.springmvc.OpenApiValidationInterceptor.<init>(OpenApiValidationInterceptor.java:35) [swagger-request-validator-springmvc-2.1.0.jar:na]
+	at com.onlineshop.runtime.SwaggerApiValidationConfig.<init>(SwaggerApiValidationConfig.java:32) [main/:na]
+	at com.onlineshop.runtime.SwaggerApiValidationConfig$$EnhancerBySpringCGLIB$$a83a8abf.<init>(<generated>) [main/:na]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) [na:1.8.0_144]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) [na:1.8.0_144]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) [na:1.8.0_144]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) [na:1.8.0_144]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1308) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1154) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:392) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:235) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:193) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:188) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:170) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:89) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:261) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:234) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:54) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5098) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1432) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1422) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_144]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134) ~[na:1.8.0_144]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:944) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:831) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1432) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1422) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_144]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134) ~[na:1.8.0_144]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:944) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:261) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:801) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:372) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:106) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:414) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:174) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:540) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at com.onlineshop.OnlineShopApplication.main(OnlineShopApplication.java:14) ~[main/:na]
+
+2018-12-11 22:48:55.311  INFO 7494 --- [           main] o.a.c.config.YamlConfigurationLoader     : Configuration location: file:/Users/alexandru.vladut/Personal/GitHub/online-shop/online-shop/target/embeddedCassandra/cu-cassandra.yaml
+2018-12-11 22:48:55.976  INFO 7494 --- [           main] org.apache.cassandra.config.Config       : Node configuration:[allocate_tokens_for_keyspace=null; authenticator=AllowAllAuthenticator; authorizer=AllowAllAuthorizer; auto_bootstrap=true; auto_snapshot=false; back_pressure_enabled=false; back_pressure_strategy=null; batch_size_fail_threshold_in_kb=50; batch_size_warn_threshold_in_kb=5; batchlog_replay_throttle_in_kb=1024; broadcast_address=null; broadcast_rpc_address=null; buffer_pool_use_heap_if_exhausted=true; cas_contention_timeout_in_ms=1000; cdc_enabled=false; cdc_free_space_check_interval_ms=250; cdc_raw_directory=target/embeddedCassandra/cdc; cdc_total_space_in_mb=0; client_encryption_options=<REDACTED>; cluster_name=Test Cluster; column_index_cache_size_in_kb=2; column_index_size_in_kb=64; commit_failure_policy=stop; commitlog_compression=null; commitlog_directory=target/embeddedCassandra/commitlog; commitlog_max_compression_buffers_in_pool=3; commitlog_periodic_queue_size=-1; commitlog_segment_size_in_mb=32; commitlog_sync=periodic; commitlog_sync_batch_window_in_ms=NaN; commitlog_sync_period_in_ms=10000; commitlog_total_space_in_mb=null; compaction_large_partition_warning_threshold_mb=100; compaction_throughput_mb_per_sec=16; concurrent_compactors=null; concurrent_counter_writes=32; concurrent_materialized_view_writes=32; concurrent_reads=32; concurrent_replicates=null; concurrent_writes=32; counter_cache_keys_to_save=2147483647; counter_cache_save_period=7200; counter_cache_size_in_mb=null; counter_write_request_timeout_in_ms=5000; credentials_cache_max_entries=1000; credentials_update_interval_in_ms=-1; credentials_validity_in_ms=2000; cross_node_timeout=false; data_file_directories=[Ljava.lang.String;@56dd6efa; disk_access_mode=auto; disk_failure_policy=stop; disk_optimization_estimate_percentile=0.95; disk_optimization_page_cross_chance=0.1; disk_optimization_strategy=ssd; dynamic_snitch=true; dynamic_snitch_badness_threshold=0.1; dynamic_snitch_reset_interval_in_ms=600000; dynamic_snitch_update_interval_in_ms=100; enable_materialized_views=true; enable_scripted_user_defined_functions=false; enable_user_defined_functions=false; enable_user_defined_functions_threads=true; encryption_options=org.apache.cassandra.config.EncryptionOptions$ServerEncryptionOptions@d2e6b0b; endpoint_snitch=SimpleSnitch; file_cache_round_up=null; file_cache_size_in_mb=null; gc_log_threshold_in_ms=200; gc_warn_threshold_in_ms=0; hinted_handoff_disabled_datacenters=[]; hinted_handoff_enabled=true; hinted_handoff_throttle_in_kb=1024; hints_compression=null; hints_directory=target/embeddedCassandra/hints; hints_flush_period_in_ms=10000; incremental_backups=false; index_interval=128; index_summary_capacity_in_mb=null; index_summary_resize_interval_in_minutes=60; initial_token=null; inter_dc_stream_throughput_outbound_megabits_per_sec=200; inter_dc_tcp_nodelay=true; internode_authenticator=null; internode_compression=none; internode_recv_buff_size_in_bytes=0; internode_send_buff_size_in_bytes=0; key_cache_keys_to_save=2147483647; key_cache_save_period=14400; key_cache_size_in_mb=null; listen_address=127.0.0.1; listen_interface=null; listen_interface_prefer_ipv6=false; listen_on_broadcast_address=false; max_hint_window_in_ms=10800000; max_hints_delivery_threads=2; max_hints_file_size_in_mb=128; max_mutation_size_in_kb=null; max_streaming_retries=3; max_value_size_in_mb=256; memtable_allocation_type=heap_buffers; memtable_cleanup_threshold=null; memtable_flush_writers=0; memtable_heap_space_in_mb=null; memtable_offheap_space_in_mb=null; min_free_space_per_drive_in_mb=50; native_transport_max_concurrent_connections=-1; native_transport_max_concurrent_connections_per_ip=-1; native_transport_max_frame_size_in_mb=256; native_transport_max_threads=128; native_transport_port=9142; native_transport_port_ssl=null; num_tokens=1; otc_backlog_expiration_interval_ms=200; otc_coalescing_enough_coalesced_messages=8; otc_coalescing_strategy=DISABLED; otc_coalescing_window_us=200; partitioner=org.apache.cassandra.dht.Murmur3Partitioner; permissions_cache_max_entries=1000; permissions_update_interval_in_ms=-1; permissions_validity_in_ms=2000; phi_convict_threshold=8.0; prepared_statements_cache_size_mb=null; range_request_timeout_in_ms=10000; read_request_timeout_in_ms=5000; request_scheduler=org.apache.cassandra.scheduler.NoScheduler; request_scheduler_id=null; request_scheduler_options=null; request_timeout_in_ms=10000; role_manager=null; roles_cache_max_entries=1000; roles_update_interval_in_ms=-1; roles_validity_in_ms=2000; row_cache_class_name=org.apache.cassandra.cache.OHCProvider; row_cache_keys_to_save=2147483647; row_cache_save_period=0; row_cache_size_in_mb=0; rpc_address=localhost; rpc_interface=null; rpc_interface_prefer_ipv6=false; rpc_keepalive=true; rpc_listen_backlog=50; rpc_max_threads=2147483647; rpc_min_threads=16; rpc_port=9171; rpc_recv_buff_size_in_bytes=null; rpc_send_buff_size_in_bytes=null; rpc_server_type=sync; saved_caches_directory=target/embeddedCassandra/saved_caches; seed_provider=org.apache.cassandra.locator.SimpleSeedProvider{seeds=127.0.0.1}; server_encryption_options=<REDACTED>; slow_query_log_timeout_in_ms=500; snapshot_before_compaction=false; ssl_storage_port=7011; sstable_preemptive_open_interval_in_mb=50; start_native_transport=true; start_rpc=true; storage_port=7010; stream_throughput_outbound_megabits_per_sec=200; streaming_keep_alive_period_in_secs=300; streaming_socket_timeout_in_ms=86400000; thrift_framed_transport_size_in_mb=15; thrift_max_message_length_in_mb=16; thrift_prepared_statements_cache_size_mb=null; tombstone_failure_threshold=100000; tombstone_warn_threshold=1000; tracetype_query_ttl=86400; tracetype_repair_ttl=604800; transparent_data_encryption_options=org.apache.cassandra.config.TransparentDataEncryptionOptions@4d634127; trickle_fsync=false; trickle_fsync_interval_in_kb=10240; truncate_request_timeout_in_ms=60000; unlogged_batch_across_partitions_warn_threshold=10; user_defined_function_fail_timeout=1500; user_defined_function_warn_timeout=500; user_function_timeout_policy=die; windows_timer_interval=0; write_request_timeout_in_ms=2000]
+2018-12-11 22:48:55.977  INFO 7494 --- [           main] o.a.cassandra.config.DatabaseDescriptor  : DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
+2018-12-11 22:48:55.977  INFO 7494 --- [           main] o.a.cassandra.config.DatabaseDescriptor  : Global memtable on-heap threshold is enabled at 455MB
+2018-12-11 22:48:55.977  INFO 7494 --- [           main] o.a.cassandra.config.DatabaseDescriptor  : Global memtable off-heap threshold is enabled at 455MB
+2018-12-11 22:48:56.176  WARN 7494 --- [           main] o.a.cassandra.config.DatabaseDescriptor  : Only 39.945GiB free across all data volumes. Consider adding more capacity to your cluster or removing obsolete snapshots
+2018-12-11 22:48:56.181  WARN 7494 --- [           main] o.a.cassandra.config.DatabaseDescriptor  : index_interval has been deprecated and should be removed from cassandra.yaml
+2018-12-11 22:48:56.181  WARN 7494 --- [           main] o.a.cassandra.config.DatabaseDescriptor  : Please rename encryption_options as server_encryption_options in the yaml
+2018-12-11 22:48:56.277  INFO 7494 --- [           main] o.a.cassandra.net.RateBasedBackPressure  : Initialized back-pressure with high ratio: 0.9, factor: 5, flow: FAST, window size: 2000.
+2018-12-11 22:48:56.277  INFO 7494 --- [           main] o.a.cassandra.config.DatabaseDescriptor  : Back-pressure is disabled with strategy null.
+2018-12-11 22:48:56.536  INFO 7494 --- [           main] o.a.cassandra.db.commitlog.CommitLog     : No commitlog files found; skipping replay
+2018-12-11 22:48:56.567  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Hostname: 192-168-0-101.rdsnet.ro
+2018-12-11 22:48:56.567  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : JVM vendor/version: Java HotSpot(TM) 64-Bit Server VM/1.8.0_144
+2018-12-11 22:48:56.568  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Heap size: 374.500MiB/1.778GiB
+2018-12-11 22:48:56.569  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Code Cache Non-heap memory: init = 2555904(2496K) used = 15182208(14826K) committed = 15269888(14912K) max = 251658240(245760K)
+2018-12-11 22:48:56.569  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Metaspace Non-heap memory: init = 0(0K) used = 47004416(45902K) committed = 49070080(47920K) max = -1(-1K)
+2018-12-11 22:48:56.569  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Compressed Class Space Non-heap memory: init = 0(0K) used = 5933664(5794K) committed = 6340608(6192K) max = 1073741824(1048576K)
+2018-12-11 22:48:56.569  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : PS Eden Space Heap memory: init = 34078720(33280K) used = 223870976(218624K) committed = 300417024(293376K) max = 705167360(688640K)
+2018-12-11 22:48:56.569  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : PS Survivor Space Heap memory: init = 5242880(5120K) used = 14871296(14522K) committed = 15728640(15360K) max = 15728640(15360K)
+2018-12-11 22:48:56.569  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : PS Old Gen Heap memory: init = 89653248(87552K) used = 21275368(20776K) committed = 89653248(87552K) max = 1431830528(1398272K)
+2018-12-11 22:48:56.569  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : Classpath: /Users/alexandru.vladut/Personal/GitHub/online-shop/online-shop/build/classes/java/main:/Users/alexandru.vladut/Personal/GitHub/online-shop/online-shop/build/resources/main:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-swagger2/2.9.2/362676bc7f4c6f9f1d568741becab0dfc198c898/springfox-swagger2-2.9.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-swagger-ui/2.9.2/d542382a88ff3ea8d4032c28b2b0325797fada7d/springfox-swagger-ui-2.9.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.atlassian.oai/swagger-request-validator-springmvc/2.1.0/ee3fb15d735b16b0c981d3683040a76752d956f4/swagger-request-validator-springmvc-2.1.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.cassandraunit/cassandra-unit/3.5.0.1/32fa834a513dae4e4ea4b2f2f2b7794a6edb9827/cassandra-unit-3.5.0.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-rest/2.1.1.RELEASE/4cacd6ced2eea45f24c608a45e091e8126aed29c/spring-boot-starter-data-rest-2.1.1.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-cassandra/2.1.1.RELEASE/8a3ac2f5fef24c83916854ce9838a99f66dd3f13/spring-boot-starter-data-cassandra-2.1.1.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.cassandraunit/cassandra-unit-shaded/3.5.0.1/6502514d57f14acdd6c53f6703dc5ca3420c49f7/cassandra-unit-shaded-3.5.0.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-cassandra/2.1.3.RELEASE/ee0144a50701a1158cd5120ad105a1e4e6b9f159/spring-data-cassandra-2.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.datastax.cassandra/cassandra-driver-core/3.6.0/1d689ae757862f7c497dd6b186793d1bf921fd28/cassandra-driver-core-3.6.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.hectorclient/hector-core/2.0-0/e16369b86de734ba6500992c682f6bc71565ba7/hector-core-2.0-0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-swagger-common/2.9.2/b38a41b3044af80cb7f41f67be5d158c9f6491ec/springfox-swagger-common-2.9.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.atlassian.oai/swagger-request-validator-core/2.1.0/a0799d33b867d00c60d72c63a5d38ff7679f852e/swagger-request-validator-core-2.1.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger.parser.v3/swagger-parser/2.0.5/252c20c92400ececc30bae1515556ad873b84b2/swagger-parser-2.0.5.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger.parser.v3/swagger-parser-v2-converter/2.0.5/a6ee549c0dde7dd2456d16b97493bee8450e0423/swagger-parser-v2-converter-2.0.5.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-compat-spec-parser/1.0.39/7763b756edffe96ba727d75042810e41838d3426/swagger-compat-spec-parser-1.0.39.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-parser/1.0.39/97779f232e6a644389c9344ccdae3af2cc6c2d95/swagger-parser-1.0.39.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-core/1.5.21/4bcf9246c3e439e7019277fa66ffcdf84b709ff2/swagger-core-1.5.21.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-models/1.5.21/34db9d454eddd4aae587b82320afd7b5970f8a1f/swagger-models-1.5.21.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-annotations/1.5.21/4e0e4c39ca2100290858dd0743eaf87ee5898609/swagger-annotations-1.5.21.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-schema/2.9.2/e268f38774b16bb51a92ccaef0dcf3dc651c0cee/springfox-schema-2.9.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.9.2/ed2ed714a6cba8804d00f80f0534901e4c7a3211/springfox-spring-web-2.9.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spi/2.9.2/6ac686190a6ceaccdae8b50d03b0501d144a6666/springfox-spi-2.9.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.cassandra/cassandra-all/3.11.2/645786291a1e9575355895b57b83d54da4572ad8/cassandra-all-3.11.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.caffinitas.ohc/ohc-core/0.4.4/437cd3ae562daf1d2d47b126ba5ba520c8f156bb/ohc-core-0.4.4.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-core/2.9.2/2e26f58939c594fb5c958c3a1c7bedf83d2f2702/springfox-core-2.9.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.java-json-tools/json-schema-validator/2.2.8/b577aa61af5731102ed6044a6f01cfa10499e370/json-schema-validator-2.2.8.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.java-json-tools/json-schema-core/1.2.8/5164416f08168ced34e02d870cb958db42b61b5f/json-schema-core-1.2.8.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.fge/json-patch/1.6/8c7a8da998228261d5eec90c5aeb382d1ff723c/json-patch-1.6.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.fge/jackson-coreutils/1.8/491a6e1130a180c153df9f2b7aabd7a700282c67/jackson-coreutils-1.8.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.fge/uri-template/0.9/ab1ad5804d3c7d640f21059085df5be340e97929/uri-template-0.9.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/23.0/c947004bb13d18182be60077ade044099e4f26f1/guava-23.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.1.1.RELEASE/fccdac7bbd88561a33868101813d9210bd7a13b9/spring-boot-starter-web-2.1.1.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.hibernate.validator/hibernate-validator/6.0.13.Final/af4232bf90ecd33c71147d67185dbb1cfe8f33df/hibernate-validator-6.0.13.Final.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.4.0/291658ac2ce2476256c7115943652c0accb5c857/classmate-1.4.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.plugin/spring-plugin-metadata/1.2.0.RELEASE/97223fc496b6cab31602eedbd4202aa4fff0d44f/spring-plugin-metadata-1.2.0.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-rest-webmvc/3.1.3.RELEASE/e2d2cc91b9529fb77150fd1c3bbd5b8b76702ccc/spring-data-rest-webmvc-3.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-rest-core/3.1.3.RELEASE/e99fc6cc8c394b174ec160144b07b73ceebaf457/spring-data-rest-core-3.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.plugin/spring-plugin-core/1.2.0.RELEASE/f380e7760032e7d929184f8ad8a33716b75c0657/spring-plugin-core-1.2.0.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.thinkaurelius.thrift/thrift-server/0.3.7/e8182774da1b1dde3704f450837c79997b5d7025/thrift-server-0.3.7.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.cassandra/cassandra-thrift/3.11.2/a32991ca9ff61883d2c58097871de7dafab76722/cassandra-thrift-3.11.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.thrift/libthrift/0.9.2/9b067e2e2c5291e9f0d8b3561b1654286e6d81ee/libthrift-0.9.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.25/f8c32b13ff142a513eeb5b6330b1588dcb2c0461/jcl-over-slf4j-1.7.25.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-jvm/4.0.3/87f4ea9b2895de1822bd4da9f672668776643c38/metrics-jvm-4.0.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.addthis.metrics/reporter-config3/3.0.3/5fd930067d25f0e8ecd005d7c3e40f31d60f2395/reporter-config3-3.0.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-core/4.0.3/bb562ee73f740bb6b2bf7955f97be6b870d9e9f0/metrics-core-4.0.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/2.1.1.RELEASE/5fc133c1c1858020dd8df5192eaeea747c8b6e60/spring-boot-starter-json-2.1.1.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/2.1.1.RELEASE/71df6742de72887214813ff03ae0b6ec4bbcf899/spring-boot-starter-2.1.1.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.1.1.RELEASE/f0cba1cfbc46eb02a3af3555e1136ef3890a1bbf/spring-boot-starter-logging-2.1.1.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.3/7c4f3c474fb2c041d8028740440937705ebb473a/logback-classic-1.2.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.ecyrd.speed4j/speed4j/0.9/69f55ac5c3d4731a4d54af3c12ec51be7060c2a9/speed4j-0.9.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.yammer.metrics/metrics-core/2.2.0/f82c035cfa786d3cbec362c38c22a5f5b1bc8724/metrics-core-2.2.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.1.3.RELEASE/b95cf0c3dae022898b5f1c652e087c68e89dab6c/spring-data-commons-2.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-ext/1.7.25/d1685f86e2becda32ad8bb823b8cc4990eb45f69/slf4j-ext-1.7.25.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.slf4j/log4j-over-slf4j/1.7.25/a87bb47468f47ee7aabbd54f93e133d4215769c3/log4j-over-slf4j-1.7.25.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.addthis.metrics/reporter-config-base/3.0.3/18602360f5e606cbca07ded5ecfeda6121789c9f/reporter-config-base-3.0.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.hateoas/spring-hateoas/0.25.0.RELEASE/22d1abd575426709734ab83e7d81d6deb4addbf6/spring-hateoas-0.25.0.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.11.1/1097acadf76aa4dd721ec5807566003ae9d975de/log4j-to-slf4j-2.11.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.25/af5364cd6679bfffb114f0dec8a157aaa283b76/jul-to-slf4j-1.7.25.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger.parser.v3/swagger-parser-v3/2.0.5/5574bc020d30ce2beb853397929bca4a412660/swagger-parser-v3-2.0.5.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger.core.v3/swagger-core/2.0.5/ce4ca668b35e25ee962c4fa29b9bbe41654f8b76/swagger-core-2.0.5.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct/1.2.0.Final/8609d6eb044e9f6c73cb24c8f2f4ed5c72a249c7/mapstruct-1.2.0.Final.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.8.1/6505a72a097d9270f7a9e7bf42c4238283247755/commons-lang3-3.8.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.31.Final/7703c0696f2f34ec7c223c6a5750366a5f4dfb6f/netty-handler-4.1.31.Final.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/4.5.2/35d000afbaa4ed425d91873b40f4df9b8236875b/jna-4.5.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/4785a3c21320980282f9f33d0d1264a69040538f/hamcrest-library-1.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.1.3.RELEASE/ddce255764fe4211c1b189a55384037132b5afd2/spring-tx-5.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.1.7/33b6965e9364145972035c30a45a996aad2bf789/snappy-java-1.1.1.7.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/net.jpountz.lz4/lz4/1.3.0/c708bb2590c0652a642236ef45d9f99ff842a2ce/lz4-1.3.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.ning/compress-lzf/0.8.4/994da6bddb79a40c368d3040f2aa06b94faf6b1f/compress-lzf-0.8.4.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/commons-cli/commons-cli/1.1/11c98b99ad538f2f67633afd4d7f4d98ecfbb408/commons-cli-1.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.6/1afe5621985efe90a92d0fbc9be86271efbe796f/httpclient-4.5.6.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.11/3acb4705652e16236558f0f4f2192cc33c3bd189/commons-codec-1.11.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.2/ec2544ab27e110d2d431bdad7d538ed509b21e62/commons-math3-3.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4/d4b42ed76a166a81dbac613339eed3343be6bd2d/concurrentlinkedhashmap-lru-1.4.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.googlecode.json-simple/json-simple/1.1/5e303a03d04e6788dddfa3655272580ae0fc13bb/json-simple-1.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.boundary/high-scale-lib/1.0.6/7b44147cb2729e1724d2d46d7b932c56b65087f0/high-scale-lib-1.0.6.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/2.9.7/a428edc4bb34a2da98a50eb759c26941d4e85960/jackson-dataformat-yaml-2.9.7.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.23/ec62d74fe50689c28c0ff5b35d3aebcaa8b5be68/snakeyaml-1.23.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.mindrot/jbcrypt/0.3m/fe2d9c5f23767d681a7e38fc8986b812400ec583/jbcrypt-0.3m.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.lmax/disruptor/3.0.1/d68c363b12827c644bd60469827b862cad7dc0a2/disruptor-3.0.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.clearspring.analytics/stream/2.5.2/8ec983689f4cc5463d012f415129b0c9fe296b7a/stream-2.5.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/it.unimi.dsi/fastutil/6.5.7/dec71174d0c8a20f355e5af8b59f25eb424c49d3/fastutil-6.5.7.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.2.3/864344400c3d4d92dfeb0a305dc87d953677c03c/logback-core-1.2.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.carrotsearch/hppc/0.5.4/21b0c8e70f4285dd10eaeb517cacb16d5bb2dd63/hppc-0.5.4.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/de.jflex/jflex/1.6.0/9d3b308283617fe047b437839e45dc4fe48a4f2a/jflex-1.6.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant/1.7.0/9746af1a485e50cf18dcb232489032a847067066/ant-1.7.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant-launcher/1.7.0/e7e30789211e074aa70ef3eaea59bd5b22a7fa7a/ant-launcher-1.7.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.rholder/snowball-stemmer/1.3.0.581.1/35a89d519949c33c6f28e8f37b3df7893b776ca4/snowball-stemmer-1.3.0.581.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.googlecode.concurrent-trees/concurrent-trees/2.4.0/2e505b78f9216abebbbdf1c3254bf9f4c565ae43/concurrent-trees-2.4.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.jbellis/jamm/0.3.0/a08af6071e57d4eb5d13db780c7810f73b549f1a/jamm-0.3.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.10.1/9ac3dbf89dbf2ee385185dd0cd3064fe789efee0/joda-time-2.10.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.fusesource/sigar/1.6.4/e91a355d337a0b1991f54181627d63c9973624c3/sigar-1.6.4.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.eclipse.jdt.core.compiler/ecj/4.4.2/71d67f5bab9465ec844596ef844f40902ae25392/ecj-4.4.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.ben-manes.caffeine/caffeine/2.6.2/c8fd8817f9d2b2ced82f8968e0dd943aab557de0/caffeine-2.6.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.jctools/jctools-core/1.2.1/ed2af5a88cdfc52df8dcb00f0c03a42d70605930/jctools-core-1.2.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-posix/3.0.44/1f8e4551454e613c04f6d4045ed9d5b98e21980f/jnr-posix-3.0.44.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-ffi/2.1.7/31a7391a212069303935a1df29566b7372d3ef9f/jnr-ffi-2.1.7.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/5.0.3/a7111830132c7f87d08fe48cb0ca07630f8cb91c/asm-commons-5.0.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/5.0.3/c7126aded0e8e13fed5f913559a0dd7b770a10f3/asm-analysis-5.0.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/5.0.3/1512e5571325854b05fb1efce1db75fcced54389/asm-util-5.0.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/5.0.3/287749b48ba7162fb67c93a026d690b29f410bed/asm-tree-5.0.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.0.4/da08b8cce7bbf903602a25a3a163ae252435795/asm-5.0.4.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.10/acc54d9b28bdffe4bbde89ed2e4a1e86b5285e2b/httpcore-4.4.10.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.4/16313e02a793435009f1e458fa4af5d879f6fb11/commons-lang-2.4.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/commons-pool/commons-pool/1.6/4572d589699f09d866a226a14b7f4323c6d8f040/commons-pool-1.6.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.stephenc.eaio-uuid/uuid/3.2.0/925720c5d40c4ebf8601e06025e1402251ef71d2/uuid-3.2.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.9.7/98d8f190db07f97c64c0ea3af5792f718a6c2cc1/jackson-datatype-jdk8-2.9.7.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.9.7/cbd919f1ce67533e07b98dd493247e8dbabc26b2/jackson-datatype-jsr310-2.9.7.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.9.7/f2bdd7696beffa2dbc5dc62cd24c3906a40ffcff/jackson-module-parameter-names-2.9.7.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.9.7/e6faad47abd3179666e89068485a1b88a195ceb7/jackson-databind-2.9.7.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger.parser.v3/swagger-parser-core/2.0.5/a21ae0fbbe6d43758a2269db127efcb47b4ff8a0/swagger-parser-core-2.0.5.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger.core.v3/swagger-models/2.0.5/aac59ec69c52d98b828c0450be060c2b3e6ed75/swagger-models-2.0.5.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.9.0/7c10d545325e3a6e72e06381afe469fd40eb701/jackson-annotations-2.9.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.1.3.RELEASE/2ff9c2ddccaafd5b55756ceb4a65f02acb3b847a/spring-webmvc-5.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.1.1.RELEASE/b8238b78cefe6d964f996599556af9ac8669a83d/spring-boot-autoconfigure-2.1.1.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.1.1.RELEASE/35a3dd576bc3ad5832d0a7d7242b3b140095727b/spring-boot-2.1.1.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.1.3.RELEASE/158929623ee0166fa930e88c3e2ca86a887088c0/spring-context-5.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.1.3.RELEASE/c6b69e5c73e17dd15b5a07d96ecfa2d2e7955705/spring-aop-5.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.1.3.RELEASE/c875df33e6c5ac0df53e727a08d42b316e69918b/spring-web-5.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.1.3.RELEASE/9a15a7c84bd12516574bcaf87ffa38c1e65e8a2b/spring-beans-5.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.fge/msg-simple/1.1/f261263e13dd4cfa93cc6b83f1f58f619097a2c4/msg-simple-1.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.fge/btf/1.2/9e66651022eb86301b348d57e6f59459effc343b/btf-1.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.antlr/antlr/3.5.2/c4a65c950bfc3e7d04309c515b2177c00baf7764/antlr-3.5.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.antlr/ST4/4.0.8/a1c55e974f8a94d78e2348fa6ff63f4fa1fae64/ST4-4.0.8.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.2/cd9cd41361c155f3af0f653009dcecb08d8b4afd/antlr-runtime-3.5.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.9.2/95400a7922ce75383866eb72f6ef4a7897923945/jackson-mapper-asl-1.9.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.9.2/8493982bba1727106d767034bd0d8e77bc1931a9/jackson-core-asl-1.9.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.31.Final/cfa60b136f5ea57787e910eee37e240bb45402a7/netty-codec-4.1.31.Final.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.31.Final/e3396bd65e9c76accac11c29dca035da1cc39cb1/netty-transport-4.1.31.Final.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.31.Final/e086523d6bb01fcab1d8dd370eecfcd606311b92/netty-buffer-4.1.31.Final.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.1.1.RELEASE/4cbaa992fa5509edc74d9543ab5f8f14e20fb197/spring-boot-starter-tomcat-2.1.1.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.3.2/934c04d3cfef185a8008e7bf34331b79730a9d43/javax.annotation-api-1.3.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.1.3.RELEASE/628a471a077ab80f7fd66a5f5e42e2d67e6a9607/spring-expression-5.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.1.3.RELEASE/b1e5325d35bfb27e42d57e9295510cad54ed8fdf/spring-core-5.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.jnr/jffi/1.2.16/5c1149dfcc9a16f85c8d9b8797f03806667cb9f1/jffi-1.2.16.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.jnr/jffi/1.2.16/3c1f0edf2df2c6e0419d60d0baa59659211624cb/jffi-1.2.16-native.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-x86asm/1.0.2/6936bbd6c5b235665d87bd450f5e13b52d4b48/jnr-x86asm-1.0.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-constants/0.9.9/33f23994e09aeb49880aa01e12e8e9eff058c14c/jnr-constants-0.9.9.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.9.5/38ceb06ae54ba0524d14a85fe84ed03aecef5078/byte-buddy-1.9.5.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.0.18/5f65affce1684999e2f4024983835efc3504012e/error_prone_annotations-2.0.18.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/ed28ded51a8b1c6b112568def5f4b455e6809019/j2objc-annotations-1.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.14/775b7e22fb10026eed3f86e8dc556dfafe35f2d5/animal-sniffer-annotations-1.14.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/javax.mail/mailapi/1.4.3/124600e35d9031da50e5f67661ffa741541f8f6a/mailapi-1.4.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.googlecode.libphonenumber/libphonenumber/8.0.0/ce021971974ee6a26572e43eaba7edf184c3c63d/libphonenumber-8.0.0.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.3/cdd846cfc4e0f7eefafc02c0f5dce32b9303aa2a/jopt-simple-5.0.3.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.9.7/4b7f0e0dc527fab032e9800ed231080fdc3ac015/jackson-core-2.9.7.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.31.Final/8ea7a47400beedd5bb901b96a0730eea8b7b6f2a/netty-resolver-4.1.31.Final.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.31.Final/39ddfa47808c8393a343513571e404fef02f45f0/netty-common-4.1.31.Final.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/9.0.13/91833d914b210ee93ad20b45e127e7d15268392d/tomcat-embed-websocket-9.0.13.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/9.0.13/20c90a060e1e497e0c1398f59c058279a8ae203d/tomcat-embed-core-9.0.13.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/9.0.13/5d8b3277df6197cb03233fe407f54012f7166c65/tomcat-embed-el-9.0.13.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/2.0.1.Final/cb855558e6271b1b32e716d24cb85c7f583ce09e/validation-api-2.0.1.Final.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.3.2.Final/3789d00e859632e6c6206adc0c71625559e6e3b0/jboss-logging-3.3.2.Final.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.atteo/evo-inflector/1.2.2/2551aad98d65ac5464d81fe05f0e1516cfe471c9/evo-inflector-1.2.2.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.1.3.RELEASE/d332735dbc9c3f48cac59fb832c5719eb62bbe4d/spring-jcl-5.1.3.RELEASE.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.mozilla/rhino/1.7R4/e982f2136574b9a423186fbaeaaa98dc3e5a5288/rhino-1.7R4.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/e6cb541461c2834bdea3eb920f1884d1eb508b50/activation-1.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.11.1/268f0fe4df3eefe052b57c87ec48517d64fb2a10/log4j-api-2.11.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.3.1/8531ad5ac454cc2deb9d4d32c40c4d7451939b5d/jaxb-api-2.3.1.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/io.swagger.core.v3/swagger-annotations/2.0.5/30519dc45c7b4b8e4d621fe2d015fd83f9090b8a/swagger-annotations-2.0.5.jar:/Users/alexandru.vladut/.gradle/caches/modules-2/files-2.1/javax.activation/javax.activation-api/1.2.0/85262acf3ca9816f9537ca47d5adeabaead7cb16/javax.activation-api-1.2.0.jar
+2018-12-11 22:48:56.570  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.CassandraDaemon    : JVM Arguments: [-Dfile.encoding=UTF-8, -Duser.country=GB, -Duser.language=en, -Duser.variant]
+2018-12-11 22:48:56.570  WARN 7494 --- [pool-2-thread-1] o.a.cassandra.service.StartupChecks      : jemalloc shared library could not be preloaded to speed up memory allocations
+2018-12-11 22:48:56.570  WARN 7494 --- [pool-2-thread-1] o.a.cassandra.service.StartupChecks      : JMX is not enabled to receive remote connections. Please see cassandra-env.sh for more info.
+2018-12-11 22:48:56.570 ERROR 7494 --- [pool-2-thread-1] o.a.cassandra.service.StartupChecks      : cassandra.jmx.local.port missing from cassandra-env.sh, unable to start local JMX service.
+2018-12-11 22:48:56.575  WARN 7494 --- [pool-2-thread-1] o.a.cassandra.service.StartupChecks      : The JVM is not configured to stop on OutOfMemoryError which can cause data corruption. Use one of the following JVM options to configure the behavior on OutOfMemoryError:  -XX:+ExitOnOutOfMemoryError, -XX:+CrashOnOutOfMemoryError, or -XX:OnOutOfMemoryError="<cmd args>;<cmd args>"
+2018-12-11 22:48:56.578  INFO 7494 --- [pool-2-thread-1] org.apache.cassandra.utils.SigarLibrary  : Initializing SIGAR library
+2018-12-11 22:48:56.686  INFO 7494 --- [pool-2-thread-1] org.apache.cassandra.utils.SigarLibrary  : Could not initialize SIGAR library org.hyperic.sigar.Sigar.getFileSystemListNative()[Lorg/hyperic/sigar/FileSystem; 
+2018-12-11 22:48:56.687  INFO 7494 --- [pool-2-thread-1] org.apache.cassandra.utils.SigarLibrary  : Sigar could not be initialized, test for checking degraded mode omitted.
+2018-12-11 22:48:56.868  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.cql3.QueryProcessor   : Initialized prepared statement caches with 10 MB (native) and 10 MB (Thrift)
+2018-12-11 22:48:57.759  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.IndexInfo
+2018-12-11 22:48:58.737  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.batches
+2018-12-11 22:48:58.755  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.paxos
+2018-12-11 22:48:58.767  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.local
+2018-12-11 22:48:58.774  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.peers
+2018-12-11 22:48:58.782  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.peer_events
+2018-12-11 22:48:58.789  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.range_xfers
+2018-12-11 22:48:58.793  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.compaction_history
+2018-12-11 22:48:58.799  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.sstable_activity
+2018-12-11 22:48:58.805  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.size_estimates
+2018-12-11 22:48:58.809  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.available_ranges
+2018-12-11 22:48:58.814  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.transferred_ranges
+2018-12-11 22:48:58.818  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.views_builds_in_progress
+2018-12-11 22:48:58.825  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.built_views
+2018-12-11 22:48:58.831  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.hints
+2018-12-11 22:48:58.836  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.batchlog
+2018-12-11 22:48:58.840  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.prepared_statements
+2018-12-11 22:48:58.844  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_keyspaces
+2018-12-11 22:48:58.850  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_columnfamilies
+2018-12-11 22:48:58.854  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_columns
+2018-12-11 22:48:58.857  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_triggers
+2018-12-11 22:48:58.861  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_usertypes
+2018-12-11 22:48:58.865  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_functions
+2018-12-11 22:48:58.870  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system.schema_aggregates
+2018-12-11 22:48:58.872  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.view.ViewManager   : Not submitting build tasks for views in keyspace system as storage service is not initialized
+2018-12-11 22:48:59.052  INFO 7494 --- [pool-2-thread-1] o.a.c.db.monitoring.ApproximateTime      : Scheduling approximate time-check task with a precision of 10 milliseconds
+2018-12-11 22:48:59.106  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.keyspaces
+2018-12-11 22:48:59.110  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.tables
+2018-12-11 22:48:59.116  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.columns
+2018-12-11 22:48:59.122  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.triggers
+2018-12-11 22:48:59.129  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.dropped_columns
+2018-12-11 22:48:59.135  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.views
+2018-12-11 22:48:59.141  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.types
+2018-12-11 22:48:59.145  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.functions
+2018-12-11 22:48:59.153  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.aggregates
+2018-12-11 22:48:59.157  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_schema.indexes
+2018-12-11 22:48:59.159  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.db.view.ViewManager   : Not submitting build tasks for views in keyspace system_schema as storage service is not initialized
+2018-12-11 22:48:59.354  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.service.CacheService  : Initializing key cache with capacity of 18 MBs.
+2018-12-11 22:48:59.377  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.service.CacheService  : Initializing row cache with capacity of 0 MBs
+2018-12-11 22:48:59.381  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.service.CacheService  : Initializing counter cache with capacity of 9 MBs
+2018-12-11 22:48:59.382  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.service.CacheService  : Scheduling counter cache save to every 7200 seconds (going to save all keys).
+2018-12-11 22:48:59.405  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Populating token metadata from system tables
+2018-12-11 22:48:59.435  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Token metadata: 
+2018-12-11 22:48:59.525  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.db.commitlog.CommitLog     : No commitlog files found; skipping replay
+2018-12-11 22:48:59.525  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Populating token metadata from system tables
+2018-12-11 22:48:59.535  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Token metadata: 
+2018-12-11 22:48:59.605  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.cql3.QueryProcessor   : Preloaded 0 prepared statements
+2018-12-11 22:48:59.606  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Cassandra version: 3.11.2
+2018-12-11 22:48:59.606  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Thrift API version: 20.1.0
+2018-12-11 22:48:59.606  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : CQL supported versions: 3.4.4 (default: 3.4.4)
+2018-12-11 22:48:59.607  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Native protocol supported versions: 3/v3, 4/v4, 5/v5-beta (default: 4/v4)
+2018-12-11 22:48:59.659  INFO 7494 --- [pool-2-thread-1] o.a.c.io.sstable.IndexSummaryManager     : Initializing index summary manager with a memory pool size of 18 MB and a resize interval of 60 minutes
+2018-12-11 22:48:59.682  INFO 7494 --- [pool-2-thread-1] o.apache.cassandra.net.MessagingService  : Starting Messaging Service on /127.0.0.1:7010 (lo0)
+2018-12-11 22:48:59.687  WARN 7494 --- [pool-2-thread-1] org.apache.cassandra.db.SystemKeyspace   : No host ID found, created ee6e2b10-df81-4b0a-8e8e-d39473bedcc9 (Note: This should happen exactly once per node).
+2018-12-11 22:48:59.705  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Loading persisted ring state
+2018-12-11 22:48:59.706  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : Starting up server gossip
+2018-12-11 22:48:59.729  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : This node will not auto bootstrap because it is configured to be a seed node.
+2018-12-11 22:48:59.735  WARN 7494 --- [pool-2-thread-1] org.apache.cassandra.dht.BootStrapper    : Picking random token for a single vnode.  You should probably add more vnodes and/or use the automatic token allocation mechanism.
+2018-12-11 22:48:59.736  INFO 7494 --- [pool-2-thread-1] org.apache.cassandra.dht.BootStrapper    : Generated random tokens. tokens are [-8875204517322145084]
+2018-12-11 22:48:59.740  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.MigrationManager   : Create new Keyspace: KeyspaceMetadata{name=system_traces, params=KeyspaceParams{durable_writes=true, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=2}}, tables=[org.apache.cassandra.config.CFMetaData@1c4cd904[cfId=c5e99f16-8677-3914-b17e-960613512345,ksName=system_traces,cfName=sessions,flags=[COMPOUND],params=TableParams{comment=tracing sessions, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=0, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [client command coordinator duration request started_at parameters]],partitionKeyColumns=[session_id],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.UUIDType,columnMetadata=[client, command, session_id, coordinator, request, started_at, duration, parameters],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@3448f30b[cfId=8826e8e9-e16a-3728-8753-3bc1fc713c25,ksName=system_traces,cfName=events,flags=[COMPOUND],params=TableParams{comment=tracing events, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=0, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.TimeUUIDType),partitionColumns=[[] | [activity source source_elapsed thread]],partitionKeyColumns=[session_id],clusteringColumns=[event_id],keyValidator=org.apache.cassandra.db.marshal.UUIDType,columnMetadata=[activity, session_id, thread, event_id, source, source_elapsed],droppedColumns={},triggers=[],indexes=[]]], views=[], functions=[], types=[]}
+2018-12-11 22:48:59.806  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.view.ViewManager   : Not submitting build tasks for views in keyspace system_traces as storage service is not initialized
+2018-12-11 22:48:59.810  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_traces.events
+2018-12-11 22:48:59.816  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_traces.sessions
+2018-12-11 22:48:59.834  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.MigrationManager   : Create new Keyspace: KeyspaceMetadata{name=system_distributed, params=KeyspaceParams{durable_writes=true, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=3}}, tables=[org.apache.cassandra.config.CFMetaData@332d5e2a[cfId=759fffad-624b-3181-80ee-fa9a52d1f627,ksName=system_distributed,cfName=repair_history,flags=[COMPOUND],params=TableParams{comment=Repair history, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.TimeUUIDType),partitionColumns=[[] | [coordinator exception_message exception_stacktrace finished_at parent_id range_begin range_end started_at status participants]],partitionKeyColumns=[keyspace_name, columnfamily_name],clusteringColumns=[id],keyValidator=org.apache.cassandra.db.marshal.CompositeType(org.apache.cassandra.db.marshal.UTF8Type,org.apache.cassandra.db.marshal.UTF8Type),columnMetadata=[status, id, coordinator, finished_at, participants, exception_stacktrace, parent_id, range_end, range_begin, exception_message, keyspace_name, started_at, columnfamily_name],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@64b75d2d[cfId=deabd734-b99d-3b9c-92e5-fd92eb5abf14,ksName=system_distributed,cfName=parent_repair_history,flags=[COMPOUND],params=TableParams{comment=Repair history, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [exception_message exception_stacktrace finished_at keyspace_name started_at columnfamily_names options requested_ranges successful_ranges]],partitionKeyColumns=[parent_id],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.TimeUUIDType,columnMetadata=[requested_ranges, exception_message, keyspace_name, successful_ranges, started_at, finished_at, options, exception_stacktrace, parent_id, columnfamily_names],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@6ae494cb[cfId=5582b59f-8e4e-35e1-b913-3acada51eb04,ksName=system_distributed,cfName=view_build_status,flags=[COMPOUND],params=TableParams{comment=Materialized View build status, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UUIDType),partitionColumns=[[] | [status]],partitionKeyColumns=[keyspace_name, view_name],clusteringColumns=[host_id],keyValidator=org.apache.cassandra.db.marshal.CompositeType(org.apache.cassandra.db.marshal.UTF8Type,org.apache.cassandra.db.marshal.UTF8Type),columnMetadata=[view_name, status, keyspace_name, host_id],droppedColumns={},triggers=[],indexes=[]]], views=[], functions=[], types=[]}
+2018-12-11 22:48:59.855  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.view.ViewManager   : Not submitting build tasks for views in keyspace system_distributed as storage service is not initialized
+2018-12-11 22:48:59.858  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_distributed.parent_repair_history
+2018-12-11 22:48:59.863  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_distributed.repair_history
+2018-12-11 22:48:59.868  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_distributed.view_build_status
+2018-12-11 22:48:59.878  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.StorageService     : JOINING: Finish joining ring
+2018-12-11 22:48:59.919  INFO 7494 --- [pool-2-thread-1] o.a.cassandra.service.MigrationManager   : Create new Keyspace: KeyspaceMetadata{name=system_auth, params=KeyspaceParams{durable_writes=true, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=1}}, tables=[org.apache.cassandra.config.CFMetaData@336f895[cfId=5bc52802-de25-35ed-aeab-188eecebb090,ksName=system_auth,cfName=roles,flags=[COMPOUND],params=TableParams{comment=role definitions, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [can_login is_superuser salted_hash member_of]],partitionKeyColumns=[role],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[salted_hash, member_of, role, can_login, is_superuser],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@4fd37d9f[cfId=0ecdaa87-f8fb-3e60-88d1-74fb36fe5c0d,ksName=system_auth,cfName=role_members,flags=[COMPOUND],params=TableParams{comment=role memberships lookup table, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UTF8Type),partitionColumns=[[] | []],partitionKeyColumns=[role],clusteringColumns=[member],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[role, member],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@3ad769e9[cfId=3afbe79f-2194-31a7-add7-f5ab90d8ec9c,ksName=system_auth,cfName=role_permissions,flags=[COMPOUND],params=TableParams{comment=permissions granted to db roles, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UTF8Type),partitionColumns=[[] | [permissions]],partitionKeyColumns=[role],clusteringColumns=[resource],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[resource, permissions, role],droppedColumns={},triggers=[],indexes=[]], org.apache.cassandra.config.CFMetaData@405514ed[cfId=5f2fbdad-91f1-3946-bd25-d5da3a5c35ec,ksName=system_auth,cfName=resource_role_permissons_index,flags=[COMPOUND],params=TableParams{comment=index of db roles with permissions granted on a resource, read_repair_chance=0.0, dclocal_read_repair_chance=0.0, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=7776000, default_time_to_live=0, memtable_flush_period_in_ms=3600000, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(org.apache.cassandra.db.marshal.UTF8Type),partitionColumns=[[] | []],partitionKeyColumns=[resource],clusteringColumns=[role],keyValidator=org.apache.cassandra.db.marshal.UTF8Type,columnMetadata=[resource, role],droppedColumns={},triggers=[],indexes=[]]], views=[], functions=[], types=[]}
+2018-12-11 22:48:59.941  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.view.ViewManager   : Not submitting build tasks for views in keyspace system_auth as storage service is not initialized
+2018-12-11 22:48:59.946  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_auth.resource_role_permissons_index
+2018-12-11 22:48:59.955  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_auth.role_members
+2018-12-11 22:48:59.963  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_auth.role_permissions
+2018-12-11 22:48:59.971  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing system_auth.roles
+2018-12-11 22:49:00.388  INFO 7494 --- [pool-2-thread-1] o.a.c.service.NativeTransportService     : Netty using Java NIO event loop
+2018-12-11 22:49:00.532  INFO 7494 --- [pool-2-thread-1] org.apache.cassandra.transport.Server    : Using Netty Version: [netty-buffer=netty-buffer-4.1.31.Final.9e50739, netty-codec=netty-codec-4.1.31.Final.9e50739, netty-common=netty-common-4.1.31.Final.9e50739, netty-handler=netty-handler-4.1.31.Final.9e50739, netty-resolver=netty-resolver-4.1.31.Final.9e50739, netty-transport=netty-transport-4.1.31.Final.9e50739]
+2018-12-11 22:49:00.533  INFO 7494 --- [pool-2-thread-1] org.apache.cassandra.transport.Server    : Starting listening for CQL clients on localhost/127.0.0.1:9142 (unencrypted)...
+2018-12-11 22:49:00.738  INFO 7494 --- [pool-2-thread-1] o.c.s.o.a.cassandra.thrift.ThriftServer  : Binding thrift service to localhost/127.0.0.1:9171
+2018-12-11 22:49:00.757  INFO 7494 --- [       Thread-2] o.c.s.o.a.cassandra.thrift.ThriftServer  : Listening for thrift clients...
+2018-12-11 22:49:00.807  INFO 7494 --- [           main] com.datastax.driver.core                 : DataStax Java driver 3.6.0 for Apache Cassandra
+2018-12-11 22:49:00.819  INFO 7494 --- [           main] c.d.driver.core.GuavaCompatibility       : Detected Guava >= 19 in the classpath, using modern compatibility layer
+2018-12-11 22:49:01.303  INFO 7494 --- [           main] com.datastax.driver.core.ClockFactory    : Using native clock to generate timestamps.
+2018-12-11 22:49:01.615  INFO 7494 --- [           main] com.datastax.driver.core.NettyUtil       : Did not find Netty's native epoll transport in the classpath, defaulting to NIO.
+2018-12-11 22:49:02.443  INFO 7494 --- [           main] c.d.d.c.p.DCAwareRoundRobinPolicy        : Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+2018-12-11 22:49:02.445  INFO 7494 --- [           main] com.datastax.driver.core.Cluster         : New Cassandra host /127.0.0.1:9142 added
+2018-12-11 22:49:02.538  INFO 7494 --- [port-Requests-1] o.a.cassandra.service.MigrationManager   : Create new Keyspace: KeyspaceMetadata{name=onlineshopkeyspace, params=KeyspaceParams{durable_writes=true, replication=ReplicationParams{class=org.apache.cassandra.locator.SimpleStrategy, replication_factor=1}}, tables=[], views=[], functions=[], types=[]}
+2018-12-11 22:49:03.187  INFO 7494 --- [port-Requests-2] o.a.cassandra.service.MigrationManager   : Create new table: org.apache.cassandra.config.CFMetaData@56f0ff11[cfId=31731230-fd86-11e8-a38e-a75b708b62e0,ksName=onlineshopkeyspace,cfName=product,flags=[COMPOUND],params=TableParams{comment=, read_repair_chance=0.0, dclocal_read_repair_chance=0.1, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=0, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [name price]],partitionKeyColumns=[id],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.UUIDType,columnMetadata=[price, name, id],droppedColumns={},triggers=[],indexes=[]]
+2018-12-11 22:49:03.196  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing onlineshopkeyspace.product
+2018-12-11 22:49:03.212  INFO 7494 --- [port-Requests-1] o.a.cassandra.service.MigrationManager   : Create new table: org.apache.cassandra.config.CFMetaData@4466f38b[cfId=3176e2c0-fd86-11e8-a38e-a75b708b62e0,ksName=onlineshopkeyspace,cfName=order_table,flags=[COMPOUND],params=TableParams{comment=, read_repair_chance=0.0, dclocal_read_repair_chance=0.1, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=0, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={min_threshold=4, max_threshold=32}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [buyeremailaddress creationdatetime orderitems]],partitionKeyColumns=[id],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.UUIDType,columnMetadata=[orderitems, id, creationdatetime, buyeremailaddress],droppedColumns={},triggers=[],indexes=[]]
+2018-12-11 22:49:03.222  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing onlineshopkeyspace.order_table
+2018-12-11 22:49:03.271  INFO 7494 --- [port-Requests-2] o.a.cassandra.service.MigrationManager   : Update table 'onlineshopkeyspace/order_table' From org.apache.cassandra.config.CFMetaData@4d1d33f0[cfId=3176e2c0-fd86-11e8-a38e-a75b708b62e0,ksName=onlineshopkeyspace,cfName=order_table,flags=[COMPOUND],params=TableParams{comment=, read_repair_chance=0.0, dclocal_read_repair_chance=0.1, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=0, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={max_threshold=32, min_threshold=4}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [buyeremailaddress creationdatetime orderitems]],partitionKeyColumns=[id],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.UUIDType,columnMetadata=[orderitems, id, creationdatetime, buyeremailaddress],droppedColumns={},triggers=[],indexes=[]] To org.apache.cassandra.config.CFMetaData@7767b19b[cfId=3176e2c0-fd86-11e8-a38e-a75b708b62e0,ksName=onlineshopkeyspace,cfName=order_table,flags=[COMPOUND],params=TableParams{comment=, read_repair_chance=0.0, dclocal_read_repair_chance=0.1, bloom_filter_fp_chance=0.01, crc_check_chance=1.0, gc_grace_seconds=864000, default_time_to_live=0, memtable_flush_period_in_ms=0, min_index_interval=128, max_index_interval=2048, speculative_retry=99PERCENTILE, caching={'keys' : 'ALL', 'rows_per_partition' : 'NONE'}, compaction=CompactionParams{class=org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy, options={max_threshold=32, min_threshold=4}}, compression=org.apache.cassandra.schema.CompressionParams@9d9844e7, extensions={}, cdc=false},comparator=comparator(),partitionColumns=[[] | [buyeremailaddress creationdatetime orderitems]],partitionKeyColumns=[id],clusteringColumns=[],keyValidator=org.apache.cassandra.db.marshal.UUIDType,columnMetadata=[orderitems, id, creationdatetime, buyeremailaddress],droppedColumns={},triggers=[],indexes=[org.apache.cassandra.schema.IndexMetadata@70b15ac[id=7c204cdb-98dd-3c2a-a291-d1c61ecf35d0,name=order_table_creationdatetime_idx,kind=COMPOSITES,options={target=creationdatetime}]]]
+2018-12-11 22:49:03.309  INFO 7494 --- [igrationStage:1] o.apache.cassandra.db.ColumnFamilyStore  : Initializing onlineshopkeyspace.order_table.order_table_creationdatetime_idx
+2018-12-11 22:49:05.323  INFO 7494 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-12-11 22:49:05.853  INFO 7494 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-11 22:49:06.575  INFO 7494 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-12-11 22:49:06.641  INFO 7494 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-12-11 22:49:06.733  INFO 7494 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-12-11 22:49:07.099  INFO 7494 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-12-11 22:49:07.102  INFO 7494 --- [           main] com.onlineshop.OnlineShopApplication     : Started OnlineShopApplication in 15.937 seconds (JVM running for 16.466)
+2018-12-11 22:49:10.097  WARN 7494 --- [OptionalTasks:1] org.apache.cassandra.utils.FBUtilities   : Trigger directory doesn't exist, please create it and try again.
+2018-12-11 22:49:10.102  INFO 7494 --- [OptionalTasks:1] o.a.cassandra.auth.CassandraRoleManager  : Created default superuser role 'cassandra'
+
+Daemon will be stopped at the end of the build stop command received
+
+> Task :bootRun
+2018-12-11 23:04:50.154  WARN 7494 --- [WriteExecutor:1] o.apache.cassandra.utils.NativeLibrary   : open(/Users/alexandru.vladut/Personal/GitHub/online-shop/online-shop/target/embeddedCassandra/hints, O_RDONLY) failed, errno (2).

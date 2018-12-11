@@ -8,7 +8,7 @@ import com.onlineshop.domain.Money;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel("Money defined as the combination of a currency and the amount")
+@ApiModel(description = "Money defined as the combination of a currency and the amount")
 public class MoneyDto {
 
 	@ApiModelProperty(value = "The currency the amount of money is expressed in", required = true, allowEmptyValue = false, example = "GBP")

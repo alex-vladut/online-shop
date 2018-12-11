@@ -8,7 +8,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiModelProperty.AccessMode;
 
-@ApiModel("Defines the structure of a Product")
+@ApiModel(description = "Defines the structure of a Product")
 public class ProductDto {
 
 	@ApiModelProperty(value = "The ID of a product, generated when a new product is created", accessMode = AccessMode.READ_ONLY)
