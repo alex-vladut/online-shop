@@ -27,6 +27,26 @@ public class MoneyTest {
 	}
 
 	@Test
+	public void shouldCreateMoney_withCurrencyAndAmountZero() {
+		final Currency currency = Currency.getInstance("GBP");
+		final BigDecimal amount = new BigDecimal("0.00");
+
+		final Money money = Money.newMoney(currency, amount);
+
+		assertNotNull(money);
+		assertThat(money.currency(), is(currency));
+		assertThat(money.amount(), is(amount));
+	}
+
+	@Test(expected = ValidationException.class)
+	public void shouldNotCreateMoney_withAmountLessThanZero() {
+		final Currency currency = Currency.getInstance("GBP");
+		final BigDecimal amount = new BigDecimal("-10.00");
+
+		Money.newMoney(currency, amount);
+	}
+
+	@Test
 	public void shouldAddToMoney() {
 		final Money money = Money.newMoney(DEFAULT_CURRENCY, new BigDecimal("100.00"));
 		final Money anotherMoney = Money.newMoney(DEFAULT_CURRENCY, new BigDecimal("150.00"));

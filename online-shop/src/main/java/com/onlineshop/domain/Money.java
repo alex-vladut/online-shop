@@ -41,6 +41,10 @@ public class Money {
 	}
 
 	public static Money newMoney(final Currency currency, final BigDecimal amount) {
+		if (amount.compareTo(new BigDecimal("0.00")) < 0) {
+			throw new ValidationException("amount", "The amount cannot be less than 0.");
+		}
+
 		return new Money(currency, amount);
 	}
 
