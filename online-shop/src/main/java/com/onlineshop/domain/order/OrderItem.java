@@ -6,7 +6,6 @@ import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 
 import com.onlineshop.domain.Money;
 import com.onlineshop.domain.product.Product;
-import com.onlineshop.domain.validation.Validator;
 
 @UserDefinedType("orderItem")
 public class OrderItem {
@@ -28,8 +27,6 @@ public class OrderItem {
 	}
 
 	public static OrderItem newOrderItem(final Product product) {
-		Validator.notNull(product, "product");
-
 		return new OrderItem(product.id(), product.price());
 	}
 

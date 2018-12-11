@@ -26,22 +26,6 @@ public class MoneyTest {
 		assertThat(money.amount(), is(amount));
 	}
 
-	@Test(expected = ValidationException.class)
-	public void shouldNotCreateMoney_withCurrencyNotProvided() {
-		final Currency currency = null;
-		final BigDecimal amount = new BigDecimal("100.00");
-
-		Money.newMoney(currency, amount);
-	}
-
-	@Test(expected = ValidationException.class)
-	public void shouldNotCreateMoney_withAmountNotProvided() {
-		final Currency currency = Currency.getInstance("GBP");
-		final BigDecimal amount = null;
-
-		Money.newMoney(currency, amount);
-	}
-
 	@Test
 	public void shouldAddToMoney() {
 		final Money money = Money.newMoney(DEFAULT_CURRENCY, new BigDecimal("100.00"));

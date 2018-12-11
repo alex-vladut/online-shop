@@ -9,7 +9,6 @@ import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 import com.onlineshop.domain.Money;
-import com.onlineshop.domain.validation.Validator;
 
 @Table
 public class Product {
@@ -40,17 +39,11 @@ public class Product {
 	}
 
 	public void update(final String name, final Money price) {
-		Validator.notNull(name, "product name");
-		Validator.notNull(price, "price");
-
 		this.name = name;
 		this.price = price;
 	}
 
 	public static Product newProduct(final String name, final Money price) {
-		Validator.notNull(name, "product name");
-		Validator.notNull(price, "price");
-
 		return new Product(randomUUID(), name, price);
 	}
 

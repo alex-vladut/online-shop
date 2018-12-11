@@ -11,7 +11,6 @@ import org.junit.Test;
 
 import com.onlineshop.domain.Money;
 import com.onlineshop.domain.product.Product;
-import com.onlineshop.domain.validation.ValidationException;
 
 public class OrderItemTest {
 
@@ -25,11 +24,6 @@ public class OrderItemTest {
 		assertNotNull(orderItem);
 		assertThat(orderItem.productId(), is(product.id()));
 		assertThat(orderItem.price(), is(product.price()));
-	}
-
-	@Test(expected = ValidationException.class)
-	public void shouldNotCreateOrderItem_withNoProductProvided() {
-		OrderItem.newOrderItem(null);
 	}
 
 }

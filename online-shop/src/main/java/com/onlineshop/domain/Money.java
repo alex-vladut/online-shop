@@ -8,7 +8,6 @@ import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 
 import com.datastax.driver.core.DataType.Name;
 import com.onlineshop.domain.validation.ValidationException;
-import com.onlineshop.domain.validation.Validator;
 
 @UserDefinedType("money")
 public class Money {
@@ -42,9 +41,6 @@ public class Money {
 	}
 
 	public static Money newMoney(final Currency currency, final BigDecimal amount) {
-		Validator.notNull(currency, "currency");
-		Validator.notNull(amount, "amount");
-
 		return new Money(currency, amount);
 	}
 

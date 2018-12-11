@@ -18,7 +18,6 @@ import com.datastax.driver.core.DataType.Name;
 import com.onlineshop.domain.Money;
 import com.onlineshop.domain.product.Product;
 import com.onlineshop.domain.validation.ValidationException;
-import com.onlineshop.domain.validation.Validator;
 
 @Table("order_table")
 public class Order {
@@ -65,8 +64,6 @@ public class Order {
 	}
 
 	public static Order newOrder(final List<Product> products, final EmailAddress buyerEmailAddress) {
-		Validator.notNull(products, "products");
-		Validator.notNull(buyerEmailAddress, "buyer email address");
 		if (products.isEmpty()) {
 			throw new ValidationException("products",
 					"At least one product should be provided in order to create an order.");

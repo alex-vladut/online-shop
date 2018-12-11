@@ -8,15 +8,7 @@ public final class Validator {
 		throw new IllegalStateException("Cannot instantiate a Validator.");
 	}
 
-	public static void notNull(final Object value, final String fieldName) {
-		if (value == null) {
-			throw new ValidationException(fieldName, "Should not be null.");
-		}
-	}
-
 	public static void isEmailAddress(final String emailAddress) {
-		notNull(emailAddress, "email address");
-
 		if (!emailAddress.matches(EMAIL_ADDRESS_REGEX)) {
 			throw new ValidationException("email address", "Should be a valid email address.");
 		}

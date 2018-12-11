@@ -42,15 +42,6 @@ public class OrderTest {
 		Order.newOrder(Collections.emptyList(), buyerEmailAddress);
 	}
 
-	@Test(expected = ValidationException.class)
-	public void shouldNotCreateOrder_withNoBuyerEmailAddressProvided() {
-		final Product product = Product.newProduct("Nike Air",
-				Money.newMoney(DEFAULT_CURRENCY, new BigDecimal("100.00")));
-		final EmailAddress buyerEmailAddress = null;
-
-		Order.newOrder(Collections.singletonList(product), buyerEmailAddress);
-	}
-
 	@Test
 	public void shouldCalculateTotalOrderPrice() {
 		final Product product1 = Product.newProduct("Nike Air",

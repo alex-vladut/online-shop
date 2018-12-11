@@ -34,11 +34,4 @@ public class EmailAddressTest {
 		EmailAddress.newEmailAddress(emailAddressAsString);
 	}
 
-	@Test(expected = ValidationException.class)
-	public void shouldNotCreateEmailAddress_withNoEmailProvided() {
-		final String emailAddressAsString = null;
-
-		EmailAddress.newEmailAddress(emailAddressAsString);
-	}
-
 }
