@@ -16,6 +16,16 @@ After navigating to the `online-shop` directory, run the following Gradle comman
 ```
 The application is now running and you can open the following URL in a browser of your choice in order to play with the API: http://localhost:8080/swagger-ui.html
 
+## Content
+
+- *General Description of the project*
+
+- *Domain analysis*
+
+- *Implementation details*
+
+- [*Run the application in a Docker container*](/static/pages/docker-kubernetes.md)
+
 ## General Description
 
 This is a basic RESTful Web Services implementation of an online-shop application using Java and various modules of Spring Framework. In terms of functional requirements, the application should allow administrators to manage a Product Catalog, offering them features such as:
@@ -87,28 +97,3 @@ This version of the project is still missing a lot of features that would be ess
 
 
 **Note:** Swagger validation with Atlasssian validator library was added later. What I wanted to do by using this library was to push the syntactic validation to the edges and let the domain focus more on the things that matter - business logic. Using such an approach should help detect various types of exceptions such as: missing required fields, fields not properly formatted (e.g. a String has the right Date format), fields are of the right type etc. After applying this strategy I was able to remove completely every null check from the domain as such checks should have been done at a higher level.
-
-## Docker
-
-The application can be run in a Docker container and a Gradle plugin was used in order to make the build of a Docker image easier. The plugin is `com.palantir.docker` (see `build.gradle` if you are curious how this looks like). In order to run the application in a Docker container follow these steps:
-- (Prerequisites) Make sure you have Docker installed on your machine
-- Run the following Gradle command for creating a Docker image locally:
-```
-> ./gradlew clean docker dockerTag
-```
-- Now a Docker image should have been created for you. In order to check that, run the following command:
-```
-> docker image ls
-```
-And you should get back something like this:
-```
-REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
-online-shop         0.0.1               f2150f5d1531        About a minute ago   202MB
-online-shop         latest              f2150f5d1531        About a minute ago   202MB
-openjdk             8-jdk-alpine        21a93502ddd8        4 days ago           103MB
-```
-- The next step is to run the image you just created in a container. So run the following command in your terminal:
-```
-> docker run -it --name online-shop -p 8080:8080 online-shop
-```
-And voila!, the application should run just as it did before. If you go to http://localhost:8080/swagger-ui.html you should be able to interact with the application by invoking different endpoints.
