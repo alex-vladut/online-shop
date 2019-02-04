@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.Filter;
 
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -30,7 +31,7 @@ public class SwaggerApiValidationConfig implements WebMvcConfigurer {
 	public SwaggerApiValidationConfig(@Value("classpath:swagger-api.json") final Resource apiSpecification)
 			throws IOException {
 		final OpenApiInteractionValidator validator = OpenApiInteractionValidator
-				.createFor(apiSpecification.getURL().getPath())
+				.createFor(IOUtils.toString(apiSpecification.getInputStream()))
 				.withLevelResolver(SpringMVCLevelResolverFactory.create()).withBasePathOverride("/v2").build();
 		this.validationInterceptor = new OpenApiValidationInterceptor(validator);
 	}

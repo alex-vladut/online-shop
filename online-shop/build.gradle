@@ -7,6 +7,10 @@ buildscript {
 	}
 }
 
+plugins {
+    id 'com.palantir.docker' version '0.13.0'
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -30,7 +34,16 @@ dependencies {
 	runtime 'com.datastax.cassandra:cassandra-driver-core:3.6.0'
 	runtime 'org.hectorclient:hector-core:2.0-0'
 
-	implementation('org.springframework.boot:spring-boot-starter-data-rest')
-	implementation('org.springframework.boot:spring-boot-starter-data-cassandra')
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-data-cassandra'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+docker {
+    name "online-shop:$project.version"
+    tags 'latest'
+    dependsOn build
+    files bootJar
+    dockerfile file('src/main/docker/Dockerfile')
+    buildArgs([BUILD_VERSION: project.version])
 }
