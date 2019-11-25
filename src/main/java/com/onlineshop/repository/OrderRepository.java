@@ -14,14 +14,12 @@ import com.onlineshop.domain.order.Order;
 @Repository
 public interface OrderRepository extends CassandraRepository<Order, UUID> {
 
-	// That query is not very efficient for large amounts of data. Will refine it
-	// later.
+	// That query is not very efficient for large amounts of data.
 	@Query("SELECT * FROM order_table WHERE creationdatetime >= :startDateTime AND creationdatetime <= :endDateTime ALLOW FILTERING")
-	List<Order> findAllOrdersBetween(@Param("startDateTime") LocalDateTime startDateTime,
-			@Param("endDateTime") LocalDateTime endDateTime);
+	List<Order> findAllOrdersBetween(@Param("startDateTime") LocalDateTime startDateTime, @Param("endDateTime") LocalDateTime endDateTime);
 
+	// Same query as above, only defined in a different manner
 	@Query(allowFiltering = true)
-	List<Order> findAllByCreationDateTimeGreaterThanEqualAndCreationDateTimeLessThanEqual(LocalDateTime startDateTime,
-			LocalDateTime endDateTime);
+	List<Order> findAllByCreationDateTimeGreaterThanEqualAndCreationDateTimeLessThanEqual(LocalDateTime startDateTime, LocalDateTime endDateTime);
 
 }

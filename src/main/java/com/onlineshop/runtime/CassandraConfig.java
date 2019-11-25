@@ -36,8 +36,6 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 	@Bean
 	@Override
 	public CassandraClusterFactoryBean cluster() {
-		EmbeddedCassandraInitialiser.initialiseEmbeddedCassandra();
-
 		final CassandraCqlClusterFactoryBean cluster = new CassandraCqlClusterFactoryBean();
 		cluster.setContactPoints(endpoint);
 		cluster.setPort(port);

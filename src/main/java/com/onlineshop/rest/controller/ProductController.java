@@ -11,18 +11,21 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.onlineshop.domain.product.Product;
 import com.onlineshop.repository.ProductRepository;
+import com.onlineshop.rest.dto.CreateProductDto;
 import com.onlineshop.rest.dto.ProductDto;
 
 import io.swagger.annotations.Api;
@@ -35,7 +38,7 @@ import io.swagger.annotations.ApiResponses;
 @RequestMapping("/products")
 public class ProductController {
 
-	private ProductRepository productRepository;
+	private final ProductRepository productRepository;
 
 	@Autowired
 	public ProductController(final ProductRepository productRepository) {
@@ -53,21 +56,17 @@ public class ProductController {
 	@ApiResponses({ @ApiResponse(code = 200, message = "Product with the given ID successfully retrieved"),
 			@ApiResponse(code = 404, message = "Product with the given ID does not exist") })
 	@GetMapping("/{productId}")
-	public ResponseEntity<ProductDto> getProduct(@RequestParam final UUID productId) {
+	public ResponseEntity<ProductDto> getProduct(@PathVariable("productId") final UUID productId) {
 		final Optional<Product> product = productRepository.findById(productId);
-		if (product.isPresent()) {
-			return ResponseEntity.ok(fromDomain(product.get()));
-		} else {
-			return ResponseEntity.notFound().build();
-		}
+		return product.map(ProductDto::fromDomain).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
 	}
 
 	@ApiOperation("Creates a new product")
 	@ApiResponses({ @ApiResponse(code = 201, message = "Product successfully created") })
 	@PostMapping
-	public ResponseEntity<ProductDto> createProduct(@RequestBody final ProductDto productDto) {
-		final Product createdProduct = productRepository
-				.save(newProduct(productDto.name, newMoney(productDto.price.currency, productDto.price.amount)));
+	public ResponseEntity<ProductDto> createProduct(@Valid @RequestBody final CreateProductDto productDto) {
+		final Product createdProduct = productRepository.save(
+				newProduct(productDto.name, newMoney(productDto.price.currency, productDto.price.amount)));
 		return created(create("/products/" + createdProduct.id().toString())).body(fromDomain(createdProduct));
 	}
 
@@ -75,16 +74,18 @@ public class ProductController {
 	@ApiResponses({ @ApiResponse(code = 200, message = "Product with the given ID successfully updated"),
 			@ApiResponse(code = 404, message = "Product with the given ID does not exist") })
 	@PutMapping("/{productId}")
-	public ResponseEntity<ProductDto> updateProduct(@RequestParam final UUID productId,
-			@RequestBody final ProductDto productDto) {
-		final Optional<Product> productOptional = productRepository.findById(productId);
-		if (productOptional.isPresent()) {
-			final Product product = productOptional.get();
-			product.update(productDto.name, newMoney(productDto.price.currency, productDto.price.amount));
-			return ResponseEntity.ok(fromDomain(product));
-		} else {
-			return ResponseEntity.notFound().build();
-		}
+	public ResponseEntity<ProductDto> updateProduct(@PathVariable("productId") final UUID productId,
+			@Valid @RequestBody final ProductDto productDto) {
+		return productRepository.findById(productId)
+				.map(product -> updateProduct(product, productDto))
+				.map(ProductDto::fromDomain)
+				.map(ResponseEntity::ok)
+				.orElse(ResponseEntity.notFound().build());
+	}
+
+	private Product updateProduct(Product product, @RequestBody @Valid ProductDto productDto) {
+		product.update(productDto.name, newMoney(productDto.price.currency, productDto.price.amount));
+		return productRepository.save(product);
 	}
 
 }

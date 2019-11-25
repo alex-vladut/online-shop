@@ -1,6 +1,7 @@
 package com.onlineshop.domain;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Currency;
 
 import org.springframework.data.cassandra.core.mapping.CassandraType;
@@ -9,11 +10,14 @@ import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 import com.datastax.driver.core.DataType.Name;
 import com.onlineshop.domain.validation.ValidationException;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 @UserDefinedType("money")
 public class Money {
 
 	public static final Currency DEFAULT_CURRENCY = Currency.getInstance("GBP");
-	public static final Money ZERO = new Money(DEFAULT_CURRENCY, BigDecimal.ZERO.setScale(2));
+	public static final Money ZERO = new Money(DEFAULT_CURRENCY, BigDecimal.ZERO.setScale(2, RoundingMode.HALF_DOWN));
 
 	@CassandraType(type = Name.VARCHAR)
 	private final Currency currency;
@@ -41,44 +45,11 @@ public class Money {
 	}
 
 	public static Money newMoney(final Currency currency, final BigDecimal amount) {
-		if (amount.compareTo(new BigDecimal("0.00")) < 0) {
+		if (amount.compareTo(BigDecimal.ZERO) < 0) {
 			throw new ValidationException("amount", "The amount cannot be less than 0.");
 		}
 
 		return new Money(currency, amount);
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((amount == null) ? 0 : amount.hashCode());
-		result = prime * result + ((currency == null) ? 0 : currency.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Money other = (Money) obj;
-		if (amount == null) {
-			if (other.amount != null)
-				return false;
-		} else if (!amount.equals(other.amount)) {
-			return false;
-		}
-		if (currency == null) {
-			if (other.currency != null)
-				return false;
-		} else if (!currency.equals(other.currency)) {
-			return false;
-		}
-		return true;
 	}
 
 }

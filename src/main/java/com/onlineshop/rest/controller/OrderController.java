@@ -11,6 +11,8 @@ import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -41,17 +43,24 @@ import io.swagger.annotations.ApiResponses;
 @RequestMapping("/orders")
 public class OrderController {
 
+	private final OrderRepository orderRepository;
+	private final ProductRepository productRepository;
+
 	@Autowired
-	private OrderRepository orderRepository;
-	@Autowired
-	private ProductRepository productRepository;
+	public OrderController(final OrderRepository orderRepository, final ProductRepository productRepository) {
+		this.orderRepository = orderRepository;
+		this.productRepository = productRepository;
+	}
 
 	@ApiOperation("Creates a new order")
 	@ApiResponses({ @ApiResponse(code = 201, message = "Order successfully created") })
 	@PostMapping
-	public ResponseEntity<OrderDto> createOrder(@RequestBody final CreateOrderDto createOrderDto) {
-		final List<Product> products = createOrderDto.products.stream().map(productRepository::findById)
-				.filter(Optional::isPresent).map(Optional::get).collect(toList());
+	public ResponseEntity<OrderDto> createOrder(@Valid @RequestBody final CreateOrderDto createOrderDto) {
+		final List<Product> products = createOrderDto.products.stream()
+				.map(productRepository::findById)
+				.filter(Optional::isPresent)
+				.map(Optional::get)
+				.collect(toList());
 		final EmailAddress buyerEmailAddress = newEmailAddress(createOrderDto.emailAddress);
 		final Order order = orderRepository.save(newOrder(products, buyerEmailAddress));
 		return created(create("/orders/" + order.id().toString())).body(fromDomain(order, products));
@@ -63,14 +72,18 @@ public class OrderController {
 	public List<OrderDto> getAllOrdersBetweenDateTimes(
 			@RequestParam("startDateTime") @DateTimeFormat(iso = ISO.DATE_TIME) final ZonedDateTime startDateTime,
 			@RequestParam("endDateTime") @DateTimeFormat(iso = ISO.DATE_TIME) final ZonedDateTime endDateTime) {
-		final List<Order> orders = orderRepository.findAllOrdersBetween(startDateTime.toLocalDateTime(),
-				endDateTime.toLocalDateTime());
+		final List<Order> orders = orderRepository.findAllOrdersBetween(startDateTime.toLocalDateTime(), endDateTime.toLocalDateTime());
 		return orders.stream().map(this::mapOrderToDto).collect(toList());
 	}
 
 	private OrderDto mapOrderToDto(final Order order) {
-		final List<Product> products = order.orderItems().stream().map(OrderItem::productId)
-				.map(productRepository::findById).filter(Optional::isPresent).map(Optional::get).collect(toList());
+		final List<Product> products = order.orderItems()
+				.stream()
+				.map(OrderItem::productId)
+				.map(productRepository::findById)
+				.filter(Optional::isPresent)
+				.map(Optional::get)
+				.collect(toList());
 		return OrderDto.fromDomain(order, products);
 	}
 

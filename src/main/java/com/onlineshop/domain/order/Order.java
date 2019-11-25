@@ -23,18 +23,17 @@ import com.onlineshop.domain.validation.ValidationException;
 public class Order {
 
 	@Id
-	private UUID id;
+	private final UUID id;
 	@Column
-	private EmailAddress buyerEmailAddress;
+	private final EmailAddress buyerEmailAddress;
 	@Column
 	@Indexed
 	@CassandraType(type = Name.TIMESTAMP)
-	private LocalDateTime creationDateTime;
+	private final LocalDateTime creationDateTime;
 	@Column
-	private List<OrderItem> orderItems;
+	private final List<OrderItem> orderItems;
 
-	private Order(final UUID id, final EmailAddress buyerEmailAddress, final LocalDateTime creationDateTime,
-			final List<OrderItem> orderItems) {
+	private Order(final UUID id, final EmailAddress buyerEmailAddress, final LocalDateTime creationDateTime, final List<OrderItem> orderItems) {
 		this.id = id;
 		this.buyerEmailAddress = buyerEmailAddress;
 		this.creationDateTime = creationDateTime;
@@ -59,14 +58,12 @@ public class Order {
 
 	public Money totalPrice() {
 		// assuming all prices are expressed in the same currency
-		return orderItems().stream().map(OrderItem::price).reduce(Money.ZERO,
-				(firstMoney, secondMoney) -> firstMoney.add(secondMoney));
+		return orderItems().stream().map(OrderItem::price).reduce(Money.ZERO, Money::add);
 	}
 
 	public static Order newOrder(final List<Product> products, final EmailAddress buyerEmailAddress) {
 		if (products.isEmpty()) {
-			throw new ValidationException("products",
-					"At least one product should be provided in order to create an order.");
+			throw new ValidationException("products", "At least one product should be provided in order to create an order.");
 		}
 
 		final List<OrderItem> orderItems = products.stream().map(OrderItem::newOrderItem).collect(toList());
