@@ -1,4 +1,4 @@
-package com.onlineshop.rest.dto;
+package com.onlineshop.orders.dto;
 
 import static java.util.stream.Collectors.toList;
 
@@ -10,9 +10,10 @@ import java.util.UUID;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import com.onlineshop.domain.order.Order;
-import com.onlineshop.domain.order.OrderItem;
-import com.onlineshop.domain.product.Product;
+import com.onlineshop.orders.domain.Order;
+import com.onlineshop.orders.domain.OrderItem;
+import com.onlineshop.products.domain.Product;
+import com.onlineshop.core.dto.MoneyDto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

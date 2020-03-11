@@ -1,4 +1,4 @@
-package com.onlineshop.rest.dto;
+package com.onlineshop.orders.dto;
 
 import java.util.List;
 import java.util.UUID;

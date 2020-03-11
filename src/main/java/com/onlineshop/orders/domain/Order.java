@@ -1,4 +1,4 @@
-package com.onlineshop.domain.order;
+package com.onlineshop.orders.domain;
 
 import static java.util.Collections.unmodifiableList;
 import static java.util.stream.Collectors.toList;
@@ -15,9 +15,9 @@ import org.springframework.data.cassandra.core.mapping.Indexed;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 import com.datastax.driver.core.DataType.Name;
-import com.onlineshop.domain.Money;
-import com.onlineshop.domain.product.Product;
-import com.onlineshop.domain.validation.ValidationException;
+import com.onlineshop.core.domain.Money;
+import com.onlineshop.products.domain.Product;
+import com.onlineshop.core.ValidationException;
 
 @Table("order_table")
 public class Order {

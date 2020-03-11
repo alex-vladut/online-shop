@@ -1,6 +1,6 @@
 package com.onlineshop.domain;
 
-import static com.onlineshop.domain.Money.DEFAULT_CURRENCY;
+import static com.onlineshop.core.domain.Money.DEFAULT_CURRENCY;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
@@ -10,7 +10,8 @@ import java.util.Currency;
 
 import org.junit.Test;
 
-import com.onlineshop.domain.validation.ValidationException;
+import com.onlineshop.core.domain.Money;
+import com.onlineshop.core.ValidationException;
 
 public class MoneyTest {
 

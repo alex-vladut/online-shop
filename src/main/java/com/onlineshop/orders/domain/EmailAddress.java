@@ -1,8 +1,8 @@
-package com.onlineshop.domain.order;
+package com.onlineshop.orders.domain;
 
 import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 
-import com.onlineshop.domain.validation.Validator;
+import com.onlineshop.core.Validator;
 
 import lombok.EqualsAndHashCode;
 

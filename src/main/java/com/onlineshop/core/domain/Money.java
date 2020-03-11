@@ -1,4 +1,4 @@
-package com.onlineshop.domain;
+package com.onlineshop.core.domain;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -8,7 +8,7 @@ import org.springframework.data.cassandra.core.mapping.CassandraType;
 import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 
 import com.datastax.driver.core.DataType.Name;
-import com.onlineshop.domain.validation.ValidationException;
+import com.onlineshop.core.ValidationException;
 
 import lombok.EqualsAndHashCode;
 

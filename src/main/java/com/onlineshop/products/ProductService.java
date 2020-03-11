@@ -1,22 +1,19 @@
-package com.onlineshop.service;
+package com.onlineshop.products;
 
-import static com.onlineshop.domain.Money.newMoney;
-import static com.onlineshop.domain.product.Product.newProduct;
+import static com.onlineshop.core.domain.Money.newMoney;
+import static com.onlineshop.products.domain.Product.newProduct;
 import static java.util.stream.Collectors.toList;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import javax.validation.Valid;
-
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import com.onlineshop.domain.product.Product;
-import com.onlineshop.repository.ProductRepository;
-import com.onlineshop.rest.dto.CreateProductDto;
-import com.onlineshop.rest.dto.ProductDto;
+import com.onlineshop.products.domain.Product;
+import com.onlineshop.products.dto.CreateProductDto;
+import com.onlineshop.products.dto.ProductDto;
+import com.onlineshop.products.dto.UpdateProductDto;
 
 import lombok.AllArgsConstructor;
 
@@ -32,8 +29,8 @@ public class ProductService {
 		return ProductDto.fromDomain(createdProduct);
 	}
 
-	public Optional<ProductDto> update(final UUID productId, final ProductDto productDto) {
-		return productRepository.findById(productId).map(product -> updateProduct(product, productDto)).map(ProductDto::fromDomain);
+	public Optional<ProductDto> update(final UUID productId, final UpdateProductDto updateProductDto) {
+		return productRepository.findById(productId).map(product -> updateProduct(product, updateProductDto)).map(ProductDto::fromDomain);
 	}
 
 	public List<ProductDto> getAll() {
@@ -45,8 +42,8 @@ public class ProductService {
 		return product.map(ProductDto::fromDomain);
 	}
 
-	private Product updateProduct(Product product, @RequestBody @Valid ProductDto productDto) {
-		product.update(productDto.name, newMoney(productDto.price.currency, productDto.price.amount));
+	private Product updateProduct(Product product, UpdateProductDto updateProductDto) {
+		product.update(updateProductDto.name, newMoney(updateProductDto.price.currency, updateProductDto.price.amount));
 		return productRepository.save(product);
 	}
 }

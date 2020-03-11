@@ -1,4 +1,4 @@
-package com.onlineshop.rest.controller;
+package com.onlineshop.products;
 
 import static java.net.URI.create;
 import static org.springframework.http.ResponseEntity.created;
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.onlineshop.rest.dto.CreateProductDto;
-import com.onlineshop.rest.dto.ProductDto;
-import com.onlineshop.service.ProductService;
+import com.onlineshop.products.dto.CreateProductDto;
+import com.onlineshop.products.dto.ProductDto;
+import com.onlineshop.products.dto.UpdateProductDto;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -63,8 +63,8 @@ public class ProductController {
 			@ApiResponse(code = 404, message = "Product with the given ID does not exist") })
 	@PutMapping("/{productId}")
 	public ResponseEntity<ProductDto> updateProduct(@PathVariable("productId") final UUID productId,
-			@Valid @RequestBody final ProductDto productDto) {
-		return productService.update(productId, productDto).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+			@Valid @RequestBody final UpdateProductDto updateProductDto) {
+		return productService.update(productId, updateProductDto).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
 	}
 
 }

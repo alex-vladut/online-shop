@@ -1,4 +1,4 @@
-package com.onlineshop.repository;
+package com.onlineshop.orders;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.springframework.data.cassandra.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.onlineshop.domain.order.Order;
+import com.onlineshop.orders.domain.Order;
 
 @Repository
 public interface OrderRepository extends CassandraRepository<Order, UUID> {

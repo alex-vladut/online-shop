@@ -6,7 +6,8 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import com.onlineshop.domain.validation.ValidationException;
+import com.onlineshop.core.ValidationException;
+import com.onlineshop.orders.domain.EmailAddress;
 
 public class EmailAddressTest {
 

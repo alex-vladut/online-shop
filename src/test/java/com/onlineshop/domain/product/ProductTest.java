@@ -9,7 +9,8 @@ import java.util.Currency;
 
 import org.junit.Test;
 
-import com.onlineshop.domain.Money;
+import com.onlineshop.core.domain.Money;
+import com.onlineshop.products.domain.Product;
 
 public class ProductTest {
 

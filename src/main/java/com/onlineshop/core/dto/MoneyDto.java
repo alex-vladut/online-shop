@@ -1,11 +1,11 @@
-package com.onlineshop.rest.dto;
+package com.onlineshop.core.dto;
 
 import java.math.BigDecimal;
 import java.util.Currency;
 
 import javax.validation.constraints.NotNull;
 
-import com.onlineshop.domain.Money;
+import com.onlineshop.core.domain.Money;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

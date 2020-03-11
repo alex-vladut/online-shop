@@ -1,4 +1,4 @@
-package com.onlineshop.rest.controller;
+package com.onlineshop.orders;
 
 import static java.net.URI.create;
 import static org.springframework.http.ResponseEntity.created;
@@ -18,9 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.onlineshop.rest.dto.CreateOrderDto;
-import com.onlineshop.rest.dto.OrderDto;
-import com.onlineshop.service.OrderService;
+import com.onlineshop.orders.dto.CreateOrderDto;
+import com.onlineshop.orders.dto.OrderDto;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

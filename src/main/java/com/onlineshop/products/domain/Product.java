@@ -1,4 +1,4 @@
-package com.onlineshop.domain.product;
+package com.onlineshop.products.domain;
 
 import static java.util.UUID.randomUUID;
 
@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-import com.onlineshop.domain.Money;
+import com.onlineshop.core.domain.Money;
 
 @Table
 public class Product {

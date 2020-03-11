@@ -1,7 +1,7 @@
-package com.onlineshop.service;
+package com.onlineshop.orders;
 
-import static com.onlineshop.domain.order.EmailAddress.newEmailAddress;
-import static com.onlineshop.domain.order.Order.newOrder;
+import static com.onlineshop.orders.domain.EmailAddress.newEmailAddress;
+import static com.onlineshop.orders.domain.Order.newOrder;
 import static java.util.stream.Collectors.toList;
 
 import java.time.ZonedDateTime;
@@ -10,14 +10,13 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.onlineshop.domain.order.EmailAddress;
-import com.onlineshop.domain.order.Order;
-import com.onlineshop.domain.order.OrderItem;
-import com.onlineshop.domain.product.Product;
-import com.onlineshop.repository.OrderRepository;
-import com.onlineshop.repository.ProductRepository;
-import com.onlineshop.rest.dto.CreateOrderDto;
-import com.onlineshop.rest.dto.OrderDto;
+import com.onlineshop.orders.domain.EmailAddress;
+import com.onlineshop.orders.domain.Order;
+import com.onlineshop.orders.domain.OrderItem;
+import com.onlineshop.products.domain.Product;
+import com.onlineshop.products.ProductRepository;
+import com.onlineshop.orders.dto.CreateOrderDto;
+import com.onlineshop.orders.dto.OrderDto;
 
 import lombok.AllArgsConstructor;
 

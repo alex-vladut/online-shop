@@ -1,11 +1,11 @@
-package com.onlineshop.domain.order;
+package com.onlineshop.orders.domain;
 
 import java.util.UUID;
 
 import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 
-import com.onlineshop.domain.Money;
-import com.onlineshop.domain.product.Product;
+import com.onlineshop.core.domain.Money;
+import com.onlineshop.products.domain.Product;
 
 import lombok.EqualsAndHashCode;
 

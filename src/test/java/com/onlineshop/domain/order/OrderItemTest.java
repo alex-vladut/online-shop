@@ -1,6 +1,6 @@
 package com.onlineshop.domain.order;
 
-import static com.onlineshop.domain.Money.DEFAULT_CURRENCY;
+import static com.onlineshop.core.domain.Money.DEFAULT_CURRENCY;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
@@ -9,8 +9,9 @@ import java.math.BigDecimal;
 
 import org.junit.Test;
 
-import com.onlineshop.domain.Money;
-import com.onlineshop.domain.product.Product;
+import com.onlineshop.core.domain.Money;
+import com.onlineshop.products.domain.Product;
+import com.onlineshop.orders.domain.OrderItem;
 
 public class OrderItemTest {
 

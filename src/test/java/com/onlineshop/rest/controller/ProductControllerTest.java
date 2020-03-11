@@ -4,7 +4,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.math.BigDecimal;
@@ -15,29 +14,29 @@ import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.onlineshop.domain.Money;
-import com.onlineshop.domain.product.Product;
-import com.onlineshop.repository.ProductRepository;
-import com.onlineshop.rest.dto.MoneyDto;
-import com.onlineshop.rest.dto.ProductDto;
+import com.onlineshop.products.ProductController;
+import com.onlineshop.products.ProductService;
+import com.onlineshop.products.domain.Product;
+import com.onlineshop.products.dto.ProductDto;
+import com.onlineshop.core.domain.Money;
+import com.onlineshop.core.dto.MoneyDto;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ProductControllerTest {
 
 	@Mock
-	private ProductRepository productRepositoryMock;
+	private ProductService productServiceMock;
 
 	private ProductController productController;
 
 	@Before
 	public void setUp() {
-		productController = new ProductController(productRepositoryMock);
+		productController = new ProductController(productServiceMock);
 	}
 
 	@Test
@@ -49,18 +48,12 @@ public class ProductControllerTest {
 		when(productMock.id()).thenReturn(productId);
 		when(productMock.price()).thenReturn(priceMock);
 
-		when(productRepositoryMock.findById(productId)).thenReturn(Optional.of(productMock));
+		when(productServiceMock.update(productId, productDto)).thenReturn(Optional.of(productDto));
 
 		final ResponseEntity<ProductDto> result = productController.updateProduct(productId, productDto);
 
 		assertNotNull(result);
 		assertThat(result.getStatusCode(), is(HttpStatus.OK));
-		final ArgumentCaptor<String> nameArgCaptor = ArgumentCaptor.forClass(String.class);
-		final ArgumentCaptor<Money> priceArgCaptor = ArgumentCaptor.forClass(Money.class);
-		verify(productMock).update(nameArgCaptor.capture(), priceArgCaptor.capture());
-		assertThat(nameArgCaptor.getValue(), is(productDto.name));
-		assertThat(priceArgCaptor.getValue().currency(), is(productDto.price.currency));
-		assertThat(priceArgCaptor.getValue().amount(), is(productDto.price.amount));
 	}
 
 	@Test
@@ -68,7 +61,7 @@ public class ProductControllerTest {
 		final UUID productId = UUID.randomUUID();
 		final ProductDto productDto = randomProductDto();
 
-		when(productRepositoryMock.findById(productId)).thenReturn(Optional.empty());
+		when(productServiceMock.update(productId, productDto)).thenReturn(Optional.empty());
 
 		final ResponseEntity<ProductDto> result = productController.updateProduct(productId, productDto);
 
