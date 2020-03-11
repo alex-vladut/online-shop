@@ -3,7 +3,6 @@ package com.onlineshop.rest.controller;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.math.BigDecimal;
@@ -19,12 +18,11 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import com.onlineshop.core.dto.MoneyDto;
 import com.onlineshop.products.ProductController;
 import com.onlineshop.products.ProductService;
-import com.onlineshop.products.domain.Product;
 import com.onlineshop.products.dto.ProductDto;
-import com.onlineshop.core.domain.Money;
-import com.onlineshop.core.dto.MoneyDto;
+import com.onlineshop.products.dto.UpdateProductDto;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ProductControllerTest {
@@ -42,15 +40,14 @@ public class ProductControllerTest {
 	@Test
 	public void shouldUpdateProduct() {
 		final UUID productId = UUID.randomUUID();
-		final ProductDto productDto = randomProductDto();
-		final Product productMock = mock(Product.class);
-		final Money priceMock = mock(Money.class);
-		when(productMock.id()).thenReturn(productId);
-		when(productMock.price()).thenReturn(priceMock);
+		final UpdateProductDto updateProductDto = new UpdateProductDto();
+		updateProductDto.name = "Updated name";
+		updateProductDto.price = randomMoneyDto();
+		ProductDto productDto = new ProductDto();
 
-		when(productServiceMock.update(productId, productDto)).thenReturn(Optional.of(productDto));
+		when(productServiceMock.update(productId, updateProductDto)).thenReturn(Optional.of(productDto));
 
-		final ResponseEntity<ProductDto> result = productController.updateProduct(productId, productDto);
+		final ResponseEntity<ProductDto> result = productController.updateProduct(productId, updateProductDto);
 
 		assertNotNull(result);
 		assertThat(result.getStatusCode(), is(HttpStatus.OK));
@@ -59,7 +56,9 @@ public class ProductControllerTest {
 	@Test
 	public void shouldNotUpdateProduct_withProductDoesNotExist() {
 		final UUID productId = UUID.randomUUID();
-		final ProductDto productDto = randomProductDto();
+		final UpdateProductDto productDto = new UpdateProductDto();
+		productDto.name = "Updated name";
+		productDto.price = randomMoneyDto();
 
 		when(productServiceMock.update(productId, productDto)).thenReturn(Optional.empty());
 
@@ -69,14 +68,11 @@ public class ProductControllerTest {
 		assertThat(result.getStatusCode(), is(HttpStatus.NOT_FOUND));
 	}
 
-	private ProductDto randomProductDto() {
-		final ProductDto productDto = new ProductDto();
-		productDto.name = "New name";
+	private MoneyDto randomMoneyDto() {
 		final MoneyDto moneyDto = new MoneyDto();
 		moneyDto.amount = new BigDecimal("100.00");
 		moneyDto.currency = Currency.getInstance("GBP");
-		productDto.price = moneyDto;
-		return productDto;
+		return moneyDto;
 	}
 
 }

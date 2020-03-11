@@ -27,14 +27,10 @@ repositories { mavenCentral() }
 
 dependencies {
 	compile 'io.springfox:springfox-swagger2:2.9.2'
-	//	compile "io.springfox:springfox-data-rest:2.9.2"
 	compile 'io.springfox:springfox-swagger-ui:2.9.2'
-	compile 'com.atlassian.oai:swagger-request-validator-springmvc:2.1.0'
 
-	compile 'org.cassandraunit:cassandra-unit:3.11.2.0'
 	// Lombok
 	compileOnly 'org.projectlombok:lombok:1.18.10'
-	runtime 'org.cassandraunit:cassandra-unit-shaded:3.11.2.0'
 	runtime 'com.datastax.oss:java-driver-core:4.1.0'
 	runtime 'org.hectorclient:hector-core:2.0-0'
 
