@@ -8,6 +8,4 @@ import org.springframework.stereotype.Repository;
 import com.onlineshop.domain.product.Product;
 
 @Repository
-public interface ProductRepository extends CassandraRepository<Product, UUID> {
-
-}
+public interface ProductRepository extends CassandraRepository<Product, UUID> { }
