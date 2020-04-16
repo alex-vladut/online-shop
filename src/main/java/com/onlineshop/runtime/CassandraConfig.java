@@ -53,7 +53,7 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 
 	@Override
 	public String[] getEntityBasePackages() {
-		return new String[] { "com.onlineshop.domain" };
+		return new String[] { "com.onlineshop" };
 	}
 
 	@Override
