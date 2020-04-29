@@ -42,3 +42,4 @@ Technical requirements:
 - [*Domain analysis*](/static/pages/data-model.md)
 - [*Implementation*](/static/pages/implementation.md)
 - [*Run the application in a Docker container*](/static/pages/docker-kubernetes.md)
+- [*SonarQube*](/static/pages/sonar-qube.md)
