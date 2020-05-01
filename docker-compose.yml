@@ -6,3 +6,7 @@ services:
     ports:
       - 9042:9042
       - 7199:7199
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411

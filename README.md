@@ -8,15 +8,20 @@ Make sure you have the following dependencies installed before running the appli
 
 ## Running the application
 
-To run the application:
+Clone the project:
 ```bash
 $ git clone https://github.com/alex-vladut/online-shop.git
 $ cd online-shop
-$ ./gradlew bootRun
 ```
-Run the following command to spin up Cassandra database:
+
+Start all the dependencies with docker-compose (e.g. Cassandra, Zipkin):
 ```bash
 $ docker-compose -f docker-compose.yml up 
+```
+
+Then start the application:
+```bash
+$ ./gradlew bootRun
 ```
 The application is now running and you can open the following URL in a browser of your choice in order to play with the API: http://localhost:8080/swagger-ui.html
 
@@ -41,5 +46,6 @@ Technical requirements:
 
 - [*Domain analysis*](/static/pages/data-model.md)
 - [*Implementation*](/static/pages/implementation.md)
-- [*Run the application in a Docker container*](/static/pages/docker-kubernetes.md)
+- [*Run the app with Docker*](/static/pages/docker-kubernetes.md)
 - [*SonarQube*](/static/pages/sonar-qube.md)
+- [*Zipkin*](/static/pages/zipkin.md)

@@ -1,9 +1,12 @@
 buildscript {
-    ext { springBootVersion = '2.1.6.RELEASE' }
+    ext {
+        springBootVersion = '2.2.2.RELEASE'
+        dependencyCheckVersion = '5.3.2.1'
+    }
     repositories { mavenCentral() }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath 'org.owasp:dependency-check-gradle:4.0.0'
+        classpath("org.owasp:dependency-check-gradle:${dependencyCheckVersion}")
     }
 }
 
@@ -33,7 +36,8 @@ dependencies {
     runtime 'com.datastax.oss:java-driver-core:4.1.0'
     runtime 'org.hectorclient:hector-core:2.0-0'
 
-    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    compile 'org.springframework.cloud:spring-cloud-starter-zipkin:2.2.2.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-cassandra'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
