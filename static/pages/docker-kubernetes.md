@@ -22,6 +22,6 @@ online-shop         latest              f2150f5d1531        About a minute ago  
 ```
 The next step is to run the image you just created in a container. So run the following command in your terminal:
 ```
-> docker run -it --name online-shop -p 8080:8080 -t online-shop
+> docker run -it --name online-shop -p 3000:3000 -t online-shop
 ```
 And voila!, the application should run just as it did before. If you go to http://localhost:8080/swagger-ui.html you should be able to interact with the application by invoking different endpoints.

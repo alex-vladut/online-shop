@@ -12,6 +12,7 @@ buildscript {
 
 plugins {
     id 'org.sonarqube' version '2.8'
+    id "org.cyclonedx.bom" version "1.1.4"
 }
 
 apply plugin: 'java'
@@ -41,4 +42,3 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-cassandra'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-

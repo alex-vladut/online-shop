@@ -23,7 +23,7 @@ Then start the application:
 ```bash
 $ ./gradlew bootRun
 ```
-The application is now running and you can open the following URL in a browser of your choice in order to play with the API: http://localhost:8080/swagger-ui.html
+The application is now running and you can open the following URL in a browser of your choice in order to play with the API: http://localhost:3000/swagger-ui.html
 
 ## General Description
 
@@ -49,3 +49,4 @@ Technical requirements:
 - [*Run the app with Docker*](/static/pages/docker-kubernetes.md)
 - [*SonarQube*](/static/pages/sonar-qube.md)
 - [*Zipkin*](/static/pages/zipkin.md)
+- [*Security vulnerabilities check*](/static/pages/dependency-check.md)

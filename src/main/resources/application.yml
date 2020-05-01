@@ -1,6 +1,8 @@
 spring:
   application:
     name: online-shop
+server:
+  port: 3000
 cassandra:
   endpoint: localhost
   port: 9042
