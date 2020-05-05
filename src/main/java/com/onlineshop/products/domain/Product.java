@@ -10,7 +10,7 @@ import org.springframework.data.cassandra.core.mapping.Table;
 
 import com.onlineshop.core.domain.Money;
 
-@Table
+@Table("products")
 public class Product {
 
 	@Id

@@ -16,40 +16,44 @@ import lombok.EqualsAndHashCode;
 @UserDefinedType("money")
 public class Money {
 
-	public static final Currency DEFAULT_CURRENCY = Currency.getInstance("GBP");
-	public static final Money ZERO = new Money(DEFAULT_CURRENCY, BigDecimal.ZERO.setScale(2, RoundingMode.HALF_DOWN));
+    public static final Currency DEFAULT_CURRENCY = Currency.getInstance("GBP");
+    public static final Money ZERO = new Money(DEFAULT_CURRENCY, BigDecimal.ZERO.setScale(2, RoundingMode.HALF_DOWN));
 
-	@CassandraType(type = Name.VARCHAR)
-	private final Currency currency;
-	private final BigDecimal amount;
+    @CassandraType(type = Name.VARCHAR)
+    private final Currency currency;
+    private final BigDecimal amount;
 
-	private Money(final Currency currency, final BigDecimal amount) {
-		this.currency = currency;
-		this.amount = amount;
-	}
+    private Money(final Currency currency, final BigDecimal amount) {
+        this.currency = currency;
+        this.amount = amount;
+    }
 
-	public Currency currency() {
-		return currency;
-	}
+    public Currency currency() {
+        return currency;
+    }
 
-	public BigDecimal amount() {
-		return amount;
-	}
+    public BigDecimal amount() {
+        return amount;
+    }
 
-	public Money add(final Money money) {
-		if (!currency().equals(money.currency())) {
-			throw new ValidationException("money", "Cannot add money expressed in different currencies");
-		}
+    public Money add(final Money money) {
+        if (!currency().equals(money.currency())) {
+            throw new ValidationException("money", "Cannot add money expressed in different currencies");
+        }
 
-		return new Money(currency(), amount().add(money.amount()));
-	}
+        return new Money(currency(), amount().add(money.amount()));
+    }
 
-	public static Money newMoney(final Currency currency, final BigDecimal amount) {
-		if (amount.compareTo(BigDecimal.ZERO) < 0) {
-			throw new ValidationException("amount", "The amount cannot be less than 0.");
-		}
+    public Money multiply(final BigDecimal value) {
+        return new Money(currency, amount.multiply(value));
+    }
 
-		return new Money(currency, amount);
-	}
+    public static Money newMoney(final Currency currency, final BigDecimal amount) {
+        if (amount.compareTo(BigDecimal.ZERO) < 0) {
+            throw new ValidationException("amount", "The amount cannot be less than 0.");
+        }
+
+        return new Money(currency, amount);
+    }
 
 }

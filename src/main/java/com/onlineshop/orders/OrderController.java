@@ -5,6 +5,7 @@ import static org.springframework.http.ResponseEntity.created;
 
 import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -38,9 +39,9 @@ public class OrderController {
 	@ApiOperation("Creates a new order")
 	@ApiResponses({ @ApiResponse(code = 201, message = "Order successfully created") })
 	@PostMapping
-	public ResponseEntity<OrderDto> createOrder(@Valid @RequestBody final CreateOrderDto createOrderDto) {
-		final OrderDto orderDto = orderService.create(createOrderDto);
-		return created(create("/orders/" + orderDto.id.toString())).body(orderDto);
+	public ResponseEntity<Void> createOrder(@Valid @RequestBody final CreateOrderDto createOrderDto) {
+		UUID orderId = orderService.create(createOrderDto);
+		return created(create("/orders/" + orderId.toString())).build();
 	}
 
 	@ApiOperation("Fetches all orders between given date-times")
