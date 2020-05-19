@@ -23,6 +23,10 @@ public class Quantity {
         return BigDecimal.valueOf(value());
     }
 
+    public Quantity add(final Quantity additionalQuantity) {
+        return newQuantity(this.value + additionalQuantity.value());
+    }
+
     public static Quantity newQuantity(final int value) {
         if (value <= 0) {
             throw new ValidationException("quantity", "Quantity must be positive");

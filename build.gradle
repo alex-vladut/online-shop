@@ -37,7 +37,8 @@ dependencies {
     runtime 'com.datastax.oss:java-driver-core:4.1.0'
     runtime 'org.hectorclient:hector-core:2.0-0'
 
-    compile 'org.springframework.cloud:spring-cloud-starter-zipkin:2.2.2.RELEASE'
+    compile("org.springframework.cloud:spring-cloud-starter-zipkin:${springBootVersion}")
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-cassandra'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

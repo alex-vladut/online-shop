@@ -74,7 +74,12 @@ public class Order {
     }
 
     public void addOrderItem(final Product product, final Quantity quantity) {
-        orderItems.add(OrderItem.newOrderItem(product, quantity));
+        final var orderItem = orderItems.stream().filter(item -> item.productId().equals(product.id())).findAny();
+        if (orderItem.isPresent()) {
+            orderItem.get().add(quantity);
+        } else {
+            orderItems.add(OrderItem.newOrderItem(product, quantity));
+        }
     }
 
     public static Order newEmptyOrder(final EmailAddress buyerEmailAddress) {

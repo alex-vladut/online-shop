@@ -13,7 +13,7 @@ public class OrderItem {
 
     private final UUID productId;
     private final Money price;
-    private final Quantity quantity;
+    private Quantity quantity;
 
     private OrderItem(final UUID productId, final Money price, final Quantity quantity) {
         this.productId = productId;
@@ -31,6 +31,10 @@ public class OrderItem {
 
     public Money price() {
         return price;
+    }
+
+    public void add(final Quantity additionalQuantity) {
+        this.quantity = this.quantity.add(additionalQuantity);
     }
 
     public static OrderItem newOrderItem(final Product product, final Quantity quantity) {
